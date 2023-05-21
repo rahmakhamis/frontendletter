@@ -1,5 +1,8 @@
-body{
-  background-color: #f1f1f1;
+.wrapper { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url("../../assets/img/bg/index2.jpg") !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .wrapper {
   position: relative;
@@ -16,14 +19,12 @@ body{
   min-width: 50%;
   min-height: 100vh;
 }
-/*[2. Contents / #auth-content]*/
 .auth-content {
   position: relative;
-  width: 480px;
-  padding: 15px;
+  width: 500px;
+  padding: 10px;
   z-index: 5;
 }
-/*[3. Cards / .card]*/
 .auth-content .card {
   margin-bottom: 0;
   -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
@@ -44,7 +45,6 @@ body{
   padding: 10px 15px;
   height: 42px;
 }
-/*[4. Miscellaneous]*/
 .shadow-2 {
   -webkit-box-shadow: 0 10px 18px 0 rgba(62, 57, 107, 0.2);
   box-shadow: 0 10px 18px 0 rgba(62, 57, 107, 0.2);
@@ -52,7 +52,6 @@ body{
 p.text-muted {
   font-size: 13px;
 }
-/*[5. Adjustments to dafault behaviors]*/
 .btn {
   padding: 10px 20px;
   border-radius: 0.25rem;
@@ -67,9 +66,8 @@ p.text-muted {
   color: #3e8ef7;
   font-weight: 600;
 }
-.square{
-  border-radius:0;
-}
-.square-b{
-  border-radius: 15px;
-}
+/*
+yellow #fecd07
+grey #171836
+white #d2d0dd
+*/

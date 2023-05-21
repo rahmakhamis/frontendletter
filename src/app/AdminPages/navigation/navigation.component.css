@@ -1,0 +1,31 @@
+.sidenav { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url("../../../assets/img/bg/index.jpg") !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+ul li a{
+  padding: .7rem 1.5rem;
+  font-size: 20px;
+  display: block;
+  color: #171836;
+  background-color: #fff;
+}
+ul li a:hover{
+  background-color:#171836 ;
+  color: #fecd07;
+  display: block;
+}
+ul li{
+  padding: 5px;
+  padding-top: 5px;
+}
+.myBg{
+background-color: #171836;
+}
+.navbar-brand{
+  color: #fecd07;
+}
+.active{
+  background-color: #f1f1f1;
+}
