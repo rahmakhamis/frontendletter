@@ -1,37 +1,55 @@
 <div class="main2 my-2">
-<div class="container">
-  <div class="card-header card-body my-2 h3">
-    <i class="fas fa-location fa-spin"> </i> Trace
-  </div>
-  <div class="card card-body shadow table-success ">
-    <div class="card card body h4 p-3 shadow">
-    <div class="form-label fw-light">FROM: Khamis</div>
-    <div class="form-label fw-light">To: Dean</div>
-    <div class="form-label fw-light">Date: Monday 28-06-23</div>
-  </div>
-    <div class="row text-center my-3">
-        <div class="col-md-3 h4">
-          <!-- <div class="form-check"><input type="radio"></div> -->
-          <i class="fa fa-user"></i>
-          <div class="form-label">You</div>
-        </div>
-        <div class="col-md-3 h4 text-muted">
-          <i class="fa fa-user-circle "></i>
-          <div class="form-label">Registry clerk</div>
-        </div>
-        <div class="col-md-3 h4">
-          <!-- <div class="form-check"><input type="radio"></div> -->
-          <i class="fa fa-user-circle"></i>
-          <div class="form-label">Head</div>
-        </div>
-        <div class="col-md-3 h4">
-          <!-- <div class="form-check"><input type="radio"></div> -->
-          <i class="fa fa-user-tie"></i>
-          <div class="form-label">Dean</div>
-        </div>
+  <div class="container">
+    <div class="card-header card-body my-4 h3">
+      <i class="fas fa-location fa-spin"> </i> Trace
     </div>
 
-  </div>
+    <div class="card card-body shadow table-success ">
+      <div class="row my-3">
+        <div class="col-md-4">
+          <select name="" id="" class="form-select p-2 fw-light">
+            <option class="fw-light" selected disabled>Choose latter</option>
+            <option class="fw-light" value="">{{Tittle}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="card card body p-3">
+        <div class="form-label fw-light">FROM: {{from}}</div>
+        <div class="form-label fw-light">TO: {{to}}</div>
+        <div class="form-label fw-light">STATUS:{{status}} </div>
+        <div class="form-label fw-light">DATE: {{ calender | date }}</div>
+        <div class="col-md-12 text-center fw-lighter">TITTLE: [ <span
+            class="text-danger text-uppercase">{{Tittle}}</span> ]</div>
+      </div>
 
-</div>
+      <div class="card card body my-2 shadow-sm">
+        <div class="row text-center my-3">
+          <div class="col-md-2">
+            <i class="fa fa-user"></i>
+            <div class="form-label">You</div>
+          </div>
+          <div class="col-md-2 text-success">
+            <i class="fa fa-check-circle"></i>
+            <div class="form-label">Registry clerk</div>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-envelope"></i>
+            <div class="form-label">Head</div>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-envelope"></i>
+            <div class="form-label">Dean</div>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-envelope"></i>
+            <div class="form-label">DVC</div>
+          </div>
+          <div class="col-md-2">
+            <i class="fa fa-envelope"></i>
+            <div class="form-label">VC</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

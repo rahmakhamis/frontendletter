@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent {
+showPassword: any;
 
 }

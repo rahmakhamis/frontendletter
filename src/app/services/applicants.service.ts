@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
-import { Applicants } from '../models/applicants';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environment/environment';
+import { Injectable } from "@angular/core";
+import { Applicants } from "../models/applicants";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "src/environment/environment";
+import { Observable } from "rxjs";
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApplicantsService {
+export class NotificationService {
 
   private apiUrl: string = environment.apiUrl + 'patient'
   constructor(private http: HttpClient) { }

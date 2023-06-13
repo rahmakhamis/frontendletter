@@ -7,12 +7,14 @@ import { HomeComponent } from './AdminPages/home/home.component';
 import { LetterComponent } from './AdminPages/letter/letter.component';
 import { SentComponent } from './AdminPages/sent/sent.component';
 import { TraceComponent } from './AdminPages/trace/trace.component';
-import { TrashComponent } from './AdminPages/trash/trash.component';
+
 import { SettingComponent } from './AdminPages/setting/setting.component';
-import { UsersComponent } from './AdminPages/users/users.component';
+
 import { DraftComponent } from './AdminPages/draft/draft.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { AccountComponent } from './account/account.component';
+import { ArchivesComponent } from './AdminPages/archives/archives.component';
+import { ReportComponent } from './AdminPages/report/report.component';
 
 const routes: Routes = [
   {
@@ -50,18 +52,18 @@ const routes: Routes = [
         path: 'draft',
         component: DraftComponent,
       },
-      {
-        path: 'users',
-        component: UsersComponent,
-      },
+
+
       {
         path: 'setting',
         component: SettingComponent,
       },
       {
-        path: 'trash',
-        component: TrashComponent,
+        path: 'archives',
+        component: ArchivesComponent,
       },
+
+
       {
         path: 'trace',
         component: TraceComponent,
@@ -70,8 +72,12 @@ const routes: Routes = [
         path: 'logout',
         component: LogoutComponent,
       },
+      {
 
-    ]
+      path: 'report',
+      component: ReportComponent,
+    },
+ ]
 
   },
 ];

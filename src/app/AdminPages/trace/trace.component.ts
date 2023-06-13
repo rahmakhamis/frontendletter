@@ -1,3 +1,4 @@
+import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./trace.component.css']
 })
 export class TraceComponent {
+ from = 'Khamis'
+ to = 'Dean'
+ status = 'Lecture'
+ Tittle = 'Kuhairisha masomo'
+ calender: number = Date.now();
 
 }

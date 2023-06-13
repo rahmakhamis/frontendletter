@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environment/environment';
+import { Category } from '../models/category';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class CategoryService {
   private apiUrl: string = environment.apiUrl + 'patient'
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Patient[]> {
-    return this.http.get<Patient[]>(this.apiUrl+"/");
+  getAll(): Observable<Category[]> {
+    return this.http.get<Category[]>(this.apiUrl+"/");
   }
 
   add(data: any): Observable<any> {
@@ -24,7 +25,7 @@ export class CategoryService {
     return this.http.get<Category>(url);
   }
 
-  update(id: any, body: any): Observable<Patient> {
+  update(id: any, body: any): Observable<Category> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.put<Category>(url, body);
   }

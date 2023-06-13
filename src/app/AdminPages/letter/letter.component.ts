@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./letter.component.css']
 })
 export class LetterComponent {
-
+from = 'rahma@gmail.com'
 }
+
