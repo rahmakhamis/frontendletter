@@ -1,0 +1,115 @@
+<div class="container p-3 my-3">
+  <div class="card card-body shadow">
+    <div class="my-1 mb-3"><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add User</button></div>
+    <div class="card-header h5 mybg"><i class="fas fa-users"></i> Users </div>
+    <table class="table table-striped table-bordered">
+      <thead class="text-center">
+        <tr class="table-dark ">
+          <th class="fw-light myText-color" scope="col">SN</th>
+          <th class="fw-light myText-color" scope="col">FIRST NAME</th>
+          <th class="fw-light myText-color" scope="col">LAST NAME</th>
+          <th class="fw-light myText-color" scope="col">GENDER</th>
+          <th class="fw-light myText-color" scope="col">DOB</th>
+          <th class="fw-light myText-color" scope="col">ID No:</th>
+          <th class="fw-light myText-color" scope="col">EMAIL</th>
+          <th class="fw-light myText-color" scope="col">EDIT:</th>
+          <th class="fw-light myText-color" scope="col">DELETE:</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+        <td>
+          <p>{{sn}}</p>
+        </td>
+        <td>
+          <p>{{First}}</p>
+        </td>
+        <td>
+          <p>{{Last}}</p>
+        </td>
+        <td>
+          <p>{{Gender}}</p>
+        </td>
+        <td>
+          <p>{{DOB}}</p>
+        </td>
+        <td>
+          <p>{{Id}}</p>
+        </td>
+        <td>
+          <p>{{Email}}</p>
+        </td>
+        <td>
+          <div class="text-center">
+            <button class="btn btn-sm btn-primary"><i class="fa fa-pen"></i> Edit</button>
+          </div>
+        </td>
+        <td>
+          <div class="text-center">
+            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Trash</button>
+          </div>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>import DataTable from 'datatables.net-dt';
+import 'datatables.net-responsive-dt';
+
+let table = new DataTable('#myTable', {
+    responsive: true
+});</script>
+
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog zero">
+    <div class="modal-content zero h5 fw-light">
+      <div class="modal-header text-white" style="background-color: #444;"> <i class="fa fa-user-plus"></i> Add User</div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class=" col-md-6 mb-3">
+              <label class="form-label fw-light" for="">First Name</label>
+            <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
+            </div>
+            <div class=" col-md-6 mb-3">
+              <label class="form-label fw-light" for="">Last Name</label>
+            <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
+            </div>
+            <div class=" col-md-6 mb-3">
+              <label class="form-label fw-light" for="">Gender</label>
+              <select name="genger" id="" class="form-select fw-light">
+                <option selected disable value="">Choose..</option>
+                <option value="">Male</option>
+                <option value="">Female</option>
+              </select>
+            </div>
+            <div class=" col-md-6 mb-3">
+              <label class="form-label fw-light" for="">Date of Birth</label>
+            <input type="date" class="form-control mb-3 zero" name="dob" required autocomplete="off">
+            </div>
+            <div class=" col-md-6 mb-3">
+              <label class="form-label fw-light" for="">Phone Number</label>
+            <input type="number" class="form-control mb-3 zero" name="dob" required autocomplete="off">
+            </div>
+            <div class=" col-md-6 mb-3">
+              <label class="form-label fw-light" for="">Role</label>
+            <input type="text" class="form-control mb-3 zero" name="dob" required autocomplete="off">
+            </div>
+            <div class=" col-md-12 mb-3">
+              <label class="form-label fw-light" for="">Email</label>
+            <input type="email" class="form-control mb-3 zero" name="dob" required autocomplete="off">
+            </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger zero" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary  zero">submit</button>
+      </div>
+    </div>
+  </div>
+</div>

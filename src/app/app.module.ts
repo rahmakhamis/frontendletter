@@ -13,14 +13,23 @@ import { HomeComponent } from './AdminPages/home/home.component';
 
 import { LogoutComponent } from './AdminPages/logout/logout.component';
 import { TraceComponent } from './AdminPages/trace/trace.component';
-
-import { LetterComponent } from './AdminPages/letter/letter.component';
 import { DraftComponent } from './AdminPages/draft/draft.component';
 import { SentComponent } from './AdminPages/sent/sent.component';
-
 import { ArchivesComponent } from './AdminPages/archives/archives.component';
 import { ReportComponent } from './AdminPages/report/report.component';
 import { SettingComponent } from './AdminPages/setting/setting.component';
+import { ListComponent } from './UserPages/list/list.component';
+import { UserHomeComponent } from './UserPages/user-home/user-home.component';
+import { UserNavigationComponent } from './UserPages/user-navigation/user-navigation.component';
+import { UserReportComponent } from './UserPages/user-report/user-report.component';
+import { UserSettingComponent } from './UserPages/user-setting/user-setting.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { UserLetterComponent } from './UserPages/user-letter/user-letter.component';
+import { UsersComponent } from './AdminPages/users/users.component';
+
+import { ReceiverNavComponent } from './ReceiverPages/receiver-nav/receiver-nav.component';
+
 
 
 @NgModule({
@@ -36,7 +45,6 @@ import { SettingComponent } from './AdminPages/setting/setting.component';
     LogoutComponent,
     TraceComponent,
 
-    LetterComponent,
     DraftComponent,
     SentComponent,
 
@@ -45,6 +53,16 @@ import { SettingComponent } from './AdminPages/setting/setting.component';
     ArchivesComponent,
     ReportComponent,
     SentComponent,
+    ListComponent,
+    UserHomeComponent,
+    UserNavigationComponent,
+    UserReportComponent,
+    UserSettingComponent,
+    UserLetterComponent,
+    UsersComponent,
+
+ReceiverNavComponent,
+
 
 
   ],
@@ -53,10 +71,9 @@ import { SettingComponent } from './AdminPages/setting/setting.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
-
-
-
-    
+    HttpClientModule,
+    FormsModule,
+    // NgModule
 
 
   ],

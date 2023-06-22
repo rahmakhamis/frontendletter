@@ -9,7 +9,7 @@ import { Category } from '../models/category';
 })
 export class CategoryService {
 
-  private apiUrl: string = environment.apiUrl + 'patient'
+  private apiUrl: string = environment.apiUrl + 'category'
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Category[]> {

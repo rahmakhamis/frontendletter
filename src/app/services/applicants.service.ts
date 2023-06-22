@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
 })
 export class NotificationService {
 
-  private apiUrl: string = environment.apiUrl + 'patient'
+  private apiUrl: string = environment.apiUrl + 'applicant'
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Applicants[]> {

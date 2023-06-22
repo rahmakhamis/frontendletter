@@ -8,7 +8,7 @@ import { environment } from 'src/environment/environment';
 })
 export class NotificationService {
 
-  private apiUrl: string = environment.apiUrl + 'patient'
+  private apiUrl: string = environment.apiUrl + 'notification'
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Notification[]> {

@@ -7,12 +7,12 @@
         <form method="POST">
           <div class="row">
             <div class="col-md-6">
-              <label class="form-label"> <i class="fas fa-user"></i> First Name:</label>
+              <label class="form-label"> <i class="fa fa-user"></i> First Name:</label>
               <input type="text" class="form-control mb-3 shadow card border" name="Uname" required autocomplete="off">
              </div>
 
              <div class="col-md-6">
-              <label class="form-label"><i class="fas fa-user"></i> Last Name:</label>
+              <label class="form-label"><i class="fa fa-user"></i> Last Name:</label>
               <input type="text" class="form-control mb-3 shadow card border" name="password" required autocomplete="off">
             </div>
             <div class="col-md-6">
@@ -26,13 +26,17 @@
         </div>
 
         <div class=" col-md-6">
-          <label class="form-label"><i class="fas fa-user"></i> Student/staff No:</label>
+          <label class="form-label"><i class="fas fa-identity"></i>Id No:</label>
           <input type="text" class="form-control mb-3 shadow card border" name="password" required autocomplete="off">
       </div>
 
       <div class=" col-md-6">
         <label class="form-label"><i class="fas fa-user"></i> Status:</label>
-        <input type="text" class="form-control mb-3 shadow card border" name="password" required autocomplete="off">
+        <select name="status" id="" class="form-select mb-3 shadow card border">
+          <option value="" selected disabled>Choose..</option>
+          <option value="Teacher">Teacher</option>
+          <option value="Students">Studens</option>
+        </select>
     </div>
 
     <div class=" col-md-12">

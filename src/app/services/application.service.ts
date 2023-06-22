@@ -9,7 +9,7 @@ import { Injectable } from "@angular/core";
 })
 export class NotificationService {
 
-  private apiUrl: string = environment.apiUrl + 'patient'
+  private apiUrl: string = environment.apiUrl + 'application'
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Application[]> {
