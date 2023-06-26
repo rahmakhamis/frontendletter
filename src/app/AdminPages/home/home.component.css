@@ -1,0 +1,7 @@
+.shape{
+  border-radius: 20px;
+  border: 0px;
+}
+.shape:hover{
+cursor: pointer;
+}

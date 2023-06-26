@@ -1,33 +1,41 @@
 <div class="sidenav">
   <ul id="sidebar" class="list-unstyled components">
-              <div id="mySidenav" class="sidenav">
-              <div class="d-flex align-items-center pb-3 link-dark text-decoration-none border-bottom">
-                <span class="fs-5 fw-semibold text-center">
-                    <img class="brand" src="../../../assets/img/ico/e-latter.ico" alt="e-latter" style="width: 15%">
-                    e-letter</span>
-                </div>
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i>
-
-            </a>
-            <li class="fw-light"><a routerLink='user-home' onclick='closeNav()'><i class="fas fa-home"></i> Home</a></li>
-            <li class="fw-light"><a routerLink='list' onclick='closeNav()'><i class="fas fa-list"></i> List</a></li>
-            <li class="fw-light"> <a routerLink='user-navigation' onclick='closeNav()'><i class="fas fa-paper-plane"></i>Letter</a></li>
-            <li class="fw-light"> <a routerLink='user-draft' onclick='closeNav()'><i class="fas fa-file"></i> Draft</a></li>
-
-            <li class="fw-light"> <a routerLink='user-Archives' onclick='closeNav()'><i class="fas fa-archive"></i> Archives</a></li>
-            <li class="fw-light"> <a routerLink='user-trace' onclick='closeNav()'><i class="fas fa-location fa-spin"></i> Trace</a></li>
-            <li class="fw-light"> <a routerLink='user-report'onclick='closeNav()'><i class="fas fa-file"></i> Report</a></li>
-            <li class="fw-light"> <a routerLink='user-setting' onclick='closeNav()'><i class="fas fa-cog"></i> Setting</a></li>
-            <li class="fw-light"> <a routerLink=''><i class="fas fa-sign-out"></i> Logout</a></li>
-            </div>
-          </ul>
+    <div id="mySidenav" class="sidenav">
+      <div class="row">
+        <div class="d-flex align-items-center pb-3 link-dark text-decoration-none col-md-12">
+          <span class="fw-semibold text-center fw-light">
+            <img class="brand fa-spin" src="../../../assets/img/ico/e-latter.ico" alt="e-latter" style="width: 18%">
+          </span>
+        </div>
+        <span class="text-center fw-light col-md-12">[ SENDER ]</span>
       </div>
-      <nav class="navbar navbar-expand-xxl navbar-dark myBg main2">
-          <div class="container-fluid">
-            <p class="navbar-brand p-2"><span style="cursor:pointer" class="fas fa-navicon navi" onclick="openNav()"></span></p>
-
-            <div class="collapse navbar-collapse text-end" id="navbarsExampleXxl">
-            </div>
-          </div>
-        </nav>
-      <router-outlet></router-outlet>
+      <div>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class=" btn btn-close my-1"></span>
+        </a>
+      </div>
+      <li class="fw-light"> <a routerLink='senderHome' onclick='closeNav()'><i class="fas fa-home"></i> Home</a></li>
+      <li class="fw-light"> <a routerLink='senderList' onclick='closeNav()'><i class="fas fa-list"></i> List</a></li>
+      <li class="fw-light"> <a routerLink='senderLetter' onclick='closeNav()'><i
+            class="fas fa-envelope"></i> Letter</a></li>
+      <li class="fw-light"> <a routerLink='user-Archives' onclick='closeNav()'><i class="fas fa-archive"></i>
+          Archives</a></li>
+      <li class="fw-light"> <a routerLink='user-trace' onclick='closeNav()'><i class="fas fa-location fa-spin"></i>
+          Trace</a></li>
+      <li class="fw-light"> <a routerLink='user-report' onclick='closeNav()'><i class="fas fa-file"></i> Report</a></li>
+      <li class="fw-light"> <a routerLink='user-setting' onclick='closeNav()'><i class="fas fa-cog"></i> Setting</a>
+      </li>
+      <li class="fw-light"> <a routerLink=''><i class="fas fa-sign-out"></i> Logout</a></li>
+    </div>
+  </ul>
+</div>
+<nav class="navbar bg-warning">
+  <div class="container-fluid">
+    <p class="navbar-brand"><span style="cursor:pointer" class="fa fa-navicon navi" onclick="openNav()"></span>
+    <div class="text-end text-white">
+      <span><i class="fas fa-user-circle fa-2x"></i> Rahma</span>
+    </div>
+    <div class="collapse navbar-collapse text-end" id="navbarsExampleXxl">
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

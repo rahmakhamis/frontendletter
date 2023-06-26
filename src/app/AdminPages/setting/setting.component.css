@@ -1,4 +1,7 @@
-.zero
-{
-border-radius: 0px;
-}
+.zero{
+  border-radius: 20px;
+  }
+
+  .none{
+    border: none;
+  }

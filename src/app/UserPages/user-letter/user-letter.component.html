@@ -1,26 +1,14 @@
-<div class="main my-2">
-  <div class="container">
-    <div class="row p-3 text-center">
-      <div class="col-md-6 my-2"><button class="btn btn-light myBg myText-color w-50"><i class="fas fa-inbox"></i>
-          Inbox</button></div>
-      <div class="col-md-6 my-2"><button class="btn btn-light myBg myText-color w-50"><i class="fas fa-pen"></i>
-          Create</button></div>
+<div class="main">
+  <div class="container text-center">
+    <span class="fw-light h5"> <i class="fa fa-envelope"></i> Letter</span>
     </div>
-    <div class="card line p-3">
-      <div class="card-header h5 mybg"><i class="fas fa-pen"></i> Create Mail</div>
+  <div class="container my-2">
+    <div class="card card-body zero shadow none">
       <form (ngSubmit)="onSubmit()">
-        <div class="row p-3">
-          <div class="col-md-6 mb-3">
-            <div class="form-label my-2">FROM:</div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <input type="text" name="email" [(ngModel)]="management.email" class="form-control line bg-white">
-          </div>
-          <div class="col-md-6 mb-3">
-            <div class="form-label my-2 ">TO:</div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <select class="form-select line" name="name" [(ngModel)]="management.name">
+        <div class="">
+          <div class="col-md-3 mb-3">
+            <label class="form-label mb-3" for="">TO:</label>
+            <select class="form-select zero" name="name" [(ngModel)]="management.name">
               <option value="" selected>choose..</option>
               <option value="Head">Head</option>
               <option value="Dean">Dean</option>
@@ -28,22 +16,9 @@
               <option value="VC">VC</option>
             </select>
           </div>
-
-          <div class="col-md-6 my-2">
-            <div class="form-label">SUBJECT:</div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <input type="text" name="name" [(ngModel)]="management.role" class="form-control line">
-          </div>
-          <div class="row p-3">
-            <div class="col-md-12 mb-3 text-end">
-              <span class="btn btn-light btn-lg btn-file"><i class="fas fa-paperclip"></i>
-                attachment <input type="file">
-              </span>
-            </div>
-            <div class="col-md-15 mb-2">
-              <textarea class="tinymce form-control" name="content" [(ngModel)]="management.status" rows="10" cols="30">
-                  <div class="container">
+          <div class="row">
+            <div class=" mb-2">
+              <textarea class="tinymce form-control" name="content" rows="4" cols="30">
                   <div style="text-align:right">
                     <p>Khamis Jumbe Ussi</p>
                     <p>Kwarara</p>
@@ -51,13 +26,12 @@
                     <h4 style="text-align:center;">KUH: <u>BARUA YA POSA</u></h4>
                     <p style="text-align:justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptatibus minima eius facere quaerat blanditiis itaque. Delectus illum recusandae autem eos dolores dolorem itaque aliquam hic, deserunt nisi corporis eligendi!</p>
                   </div>
-                  </div>
                 </textarea>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 text-center">
-              <button type="submit" name="submit" class="btn btn-light btn-lg"><i class="fas fa-paper-plane"></i> Send</button>
+              <button type="submit" name="submit" class="btn btn-secondary zero"><i class="fas fa-paper-plane"></i> Send</button>
             </div>
           </div>
         </div>

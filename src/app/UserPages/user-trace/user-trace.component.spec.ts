@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SentComponent } from './sent.component';
+import { UserTraceComponent } from './user-trace.component';
 
-describe('SentComponent', () => {
-  let component: SentComponent;
-  let fixture: ComponentFixture<SentComponent>;
+describe('UserTraceComponent', () => {
+  let component: UserTraceComponent;
+  let fixture: ComponentFixture<UserTraceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SentComponent ]
+      declarations: [ UserTraceComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SentComponent);
+    fixture = TestBed.createComponent(UserTraceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

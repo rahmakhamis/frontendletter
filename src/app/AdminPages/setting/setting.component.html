@@ -1,92 +1,101 @@
-<div class="main my-2">
-  <div class="container">
-    <div class="card card-body shadow zero">
-      <div class="card zero mb-3">
-        <div class="card-header text-center zero">Languages</div>
+<div class="main">
+  <div class="container text-center">
+    <span class="fw-light h5"> <i class="fa fa-cog fa-spin"></i> Settings</span>
+  </div>
+  <div class="container my-2">
+    <div class="card card-body shadow zero none">
+
+      <div class="zero mb-3">
+        <div class="h5 fw-light text-danger">Language & Password</div>
       </div>
       <div class="row">
-        <div class="col-lg-3 col-md-2 mb-4">
+        <div class="col-md-4 mb-4">
           <label class="form-label" for="changeLang">Change Language:</label>
           <select class="form-select zero">
             <option value="" type="">English</option>
             <option value="" type="">Kiswahili</option>
           </select>
+          <div class="my-2">
+            <a routerLink="account"> <button type="button" name=" " class="btn btn-success w-50 zero">Save</button></a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <label class="form-label" for="changeLang">Change Password:</label>
+          <button type="button" class="btn btn-success w-100 zero" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo">Change password</button>
         </div>
       </div>
-      <div class="card zero mb-3">
-        <div class="card-header text-center">User Profile</div>
+
+      <div class="zero mb-3">
+        <div class="h5 fw-light text-danger">Profile</div>
       </div>
       <div>
         <div class="row">
           <div class="col-md-4">
             <label class="form-label"> First Name:</label>
-            <input type="text" class="form-control mb-3 zero" name="Uname" value="{{fname}}" required autocomplete="off">
+            <input type="text" class="form-control mb-3 zero" name="Uname" value="{{fname}}" required
+              autocomplete="off">
           </div>
-          
+
           <div class="col-md-4">
             <label class="form-label">Last Name:</label>
-            <input type="text" class="form-control mb-3 zero" name="password" value="{{lname}}" required autocomplete="off">
+            <input type="text" class="form-control mb-3 zero" name="password" value="{{lname}}" required
+              autocomplete="off">
           </div>
           <div class="col-md-4">
             <label class="form-label">Date of birth:</label>
-            <input type="date" class="form-control mb-3 zero bg-transparent" disabled name="password" value="{{dob}}" required autocomplete="off">
+            <input type="date" class="form-control mb-3 zero bg-transparent" disabled name="password" value="{{dob}}"
+              required autocomplete="off">
           </div>
 
-        <div class="col-md-4">
-          <label class="form-label">Phone number:</label>
-          <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
-        </div>
-
-        <div class="col-md-4">
-          <label class="form-label">Email:</label>
-          <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
-        </div>
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-3 mb-2">
-          <a routerLink="account"> <button type="button" name=" "
-              class="btn btn-success zero" >Update</button></a>
-        </div>
-      </div>
-      <div class="card zero mb-2">
-        <div class="card-header text-center">Password</div>
-      </div>
-      <div>
-        <div class="row">
-                <div class="col-md-2">
-<button type="button" class="btn btn-success zero" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Change password</button>
-
-            </div>
-    </div>
-  </div>
-</div>
-<!-- modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog zero">
-    <div class="modal-content zero h5 fw-light">
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Old password:</label>
-          <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
-
+          <div class="col-md-4">
+            <label class="form-label">Phone number:</label>
+            <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
           </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">New password:</label>
-          <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
 
+          <div class="col-md-4">
+            <label class="form-label">Email:</label>
+            <input type="email" class="form-control mb-3 zero" name="password" required autocomplete="off">
           </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Repeat password:</label>
-          <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
+          <div class="col-md-4">
+            <label class="form-label">Role:</label>
+            <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
+          </div>
 
+          <div class="col-md-4 mb-2">
+            <a routerLink="account"> <button type="button" name=" "
+                class="btn btn-success w-100 zero">Update</button></a>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger zero" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success zero">Update</button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+    <!-- modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog zero">
+        <div class="modal-content zero h5 fw-light">
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Old password:</label>
+                <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
+
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">New password:</label>
+                <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
+
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Repeat password:</label>
+                <input type="text" class="form-control mb-3 zero" name="password" required autocomplete="off">
+
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger zero" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-success zero">Change</button>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -5,11 +5,12 @@
   background-size: cover;
 }
 ul li a{
-  padding: .7rem 1.5rem;
-  font-size: 20px;
+  padding: .6rem 1.5rem;
+  font-size: 18px;
   display: block;
   color: #171836;
   background-color: #fff;
+  border-radius: 20px;
 }
 ul li a:hover{
   background-color:#171836 ;
@@ -17,7 +18,7 @@ ul li a:hover{
   display: block;
 }
 ul li{
-  padding: 5px;
+  padding: 6px;
   padding-top: 5px;
 }
 .myBg{

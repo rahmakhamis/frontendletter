@@ -3,30 +3,29 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  /* background-color: #999; */
 }
 ul li a{
-  padding: .7rem 1.5rem;
-  font-size: 20px;
+  padding: .6rem 1.5rem;
+  font-size: 18px;
   display: block;
-  color: #171836;
+  color: #222;
   background-color: #fff;
-
+  border-radius: 20px;
 }
 ul li a:hover{
-  background-color:#171836 ;
+  background-color:#222 ;
   color: #fecd07;
   display: block;
 }
 ul li{
-  padding: 5px;
+  padding: 6px;
   padding-top: 5px;
 }
-.myBg{
-background-color:#fecd07 ;
-}
-.navbar-brand{
-  color: #fecd07;
-}
+
 .active{
   background-color: #f1f1f1;
+}
+.navi:hover{
+  color: #333;
 }

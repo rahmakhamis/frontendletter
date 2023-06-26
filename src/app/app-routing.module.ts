@@ -1,17 +1,12 @@
-
 import { LogoutComponent } from './AdminPages/logout/logout.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './AdminPages/navigation/navigation.component';
 import { HomeComponent } from './AdminPages/home/home.component';
-import { SentComponent } from './AdminPages/sent/sent.component';
-import { TraceComponent } from './AdminPages/trace/trace.component';
 import { SettingComponent } from './AdminPages/setting/setting.component';
-import { DraftComponent } from './AdminPages/draft/draft.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { AccountComponent } from './account/account.component';
-import { ArchivesComponent } from './AdminPages/archives/archives.component';
 import { ReportComponent } from './AdminPages/report/report.component';
 import { ListComponent } from './UserPages/list/list.component';
 import { UserHomeComponent } from './UserPages/user-home/user-home.component';
@@ -22,7 +17,9 @@ import { UsersComponent } from './AdminPages/users/users.component';
 import { ReceiverNavComponent } from './ReceiverPages/receiver-nav/receiver-nav.component';
 import { ReceiverHomeComponent } from './ReceiverPages/receiver-home/receiver-home.component';
 import { ReceiverSettingComponent } from './ReceiverPages/receiver-setting/receiver-setting.component';
-
+import { FaqComponent } from './AdminPages/faq/faq.component';
+import { UserTraceComponent } from './UserPages/user-trace/user-trace.component';
+import { UserLetterComponent } from './UserPages/user-letter/user-letter.component';
 
 const routes: Routes = [
   {
@@ -39,37 +36,25 @@ const routes: Routes = [
   },
 
   {
+    // adminRouting
     path: '',
     component: NavigationComponent,
     children: [
       {
-        path: 'home',
+        path: 'adminHome',
         component: HomeComponent,
       },
       {
-        path: 'sent',
-        component: SentComponent,
+        path: 'users',
+        component: UsersComponent,
       },
       {
-        path: 'draft',
-        component: DraftComponent,
+        path: 'faq',
+        component: FaqComponent,
       },
-    {
-      path: 'users',
-      component: UsersComponent,
-    },
       {
         path: 'setting',
         component: SettingComponent,
-      },
-      {
-        path: 'archives',
-        component: ArchivesComponent,
-      },
-
-      {
-        path: 'trace',
-        component: TraceComponent,
       },
       {
         path: 'logout',
@@ -81,22 +66,30 @@ const routes: Routes = [
       },
     ],
   },
+  // senderRouting
   {
     path: '',
     component: UserNavigationComponent,
     children: [
       {
-        path: 'home',
+        path: 'senderHome',
         component: UserHomeComponent,
       },
       {
-        path: 'list',
+        path: 'senderList',
         component: ListComponent,
       },
-
+      {
+        path: 'senderLetter',
+        component: UserLetterComponent,
+      },
       {
         path: 'user-setting',
         component: UserSettingComponent,
+      },
+      {
+        path: 'user-trace',
+        component: UserTraceComponent,
       },
       {
         path: 'user-report',
@@ -104,20 +97,19 @@ const routes: Routes = [
       },
     ],
   },
-
+      // receiverRouting
   {
     path: '',
     component: ReceiverNavComponent,
     children: [
       {
-        path: 'home-receiver',
+        path: 'receiverHome',
         component: ReceiverHomeComponent,
       },
       {
         path: 'setting',
         component: ReceiverSettingComponent,
       },
-
       {
         path: 'user-setting',
         component: UserSettingComponent,

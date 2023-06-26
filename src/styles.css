@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+  background-color: #f1f1f1;
+}
+
 .sidenav {
   height: 100%;
   width: 0;
@@ -30,14 +34,14 @@
 }
 .main {
   padding: 20px;
+  background-color: #f1f1f1;
+
 }
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-.myText-color{
-  color: #fecd07;
-}
+
 .myBg{
   background-color:#171836 ;
 }
@@ -45,9 +49,7 @@
   color: #fff;
   font-size: 145%;
 }
-.navi:hover{
-  color: #fecd07;
-}
+
 
 /*
 yellow #fecd07
