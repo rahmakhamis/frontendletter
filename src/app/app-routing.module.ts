@@ -20,6 +20,9 @@ import { ReceiverSettingComponent } from './ReceiverPages/receiver-setting/recei
 import { FaqComponent } from './AdminPages/faq/faq.component';
 import { UserTraceComponent } from './UserPages/user-trace/user-trace.component';
 import { UserLetterComponent } from './UserPages/user-letter/user-letter.component';
+import { ArchivesComponent } from './UserPages/archives/archives.component';
+import { EditUserComponent } from './AdminPages/users/user/edit-user/edit-user.component';
+import { AddUserComponent } from './AdminPages/users/user/add-user/add-user.component';
 
 const routes: Routes = [
   {
@@ -64,6 +67,14 @@ const routes: Routes = [
         path: 'report',
         component: ReportComponent,
       },
+      {
+        path:'edit-user',
+        component:EditUserComponent,
+      },
+      {
+        path:'add-user',
+        component:AddUserComponent,
+      }
     ],
   },
   // senderRouting
@@ -95,6 +106,10 @@ const routes: Routes = [
         path: 'user-report',
         component: UserReportComponent,
       },
+      {
+        path:'archives',
+        component: ArchivesComponent,
+      }
     ],
   },
       // receiverRouting

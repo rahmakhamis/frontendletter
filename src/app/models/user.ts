@@ -1,4 +1,4 @@
-export interface Applicants {
+export interface User {
   id?: number;
   name: string;
   email: string;
@@ -6,6 +6,5 @@ export interface Applicants {
   role: string;
   gender: string;
   status: string;
-  // notification: {}
-}
 
+}

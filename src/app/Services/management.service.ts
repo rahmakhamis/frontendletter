@@ -18,3 +18,4 @@ API = "http://localhost:8080/api/management/manage"
   return this.httpClient.post(`${this.API}`, management);
  }
 }
+
