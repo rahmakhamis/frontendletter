@@ -15,7 +15,7 @@
       </div>
       <div class="col-sm-6">
         <mat-form-field appearance="outline" class="example-full-width ">
-          <mat-label>PhoneNO</mat-label>
+          <mat-label>PhoneNumber</mat-label>
           <input matInput type="number" placeholder="PhoneNumber" formControlName="phoneNo">
         </mat-form-field>
       </div>
@@ -29,23 +29,17 @@
 
 
       <div class="col-sm-6">
-        <!-- <mat-form-field appearance="outline" class="example-full-width ">
-          <mat-label>Gender</mat-label>
-          <mat-select formControlName="gender">
-            <mat-option value="Male">Male</mat-option>
-            <mat-option value="Female">Female</mat-option>
-          </mat-select>
-        </mat-form-field> -->
+
         <mat-radio-group aria-label="Select an option" formControlName="gender" >
           <mat-label><b>Gender</b></mat-label>
-          <mat-radio-button value="male" formControlName="gender">Male</mat-radio-button>
-          <mat-radio-button value="female" formControlName="gender">Female</mat-radio-button>
+          <mat-radio-button value="male" >Male</mat-radio-button>
+          <mat-radio-button value="female" >Female</mat-radio-button>
         </mat-radio-group>
       </div>
       <div class="col-sm-6">
         <mat-form-field appearance="outline" class="example-full-width ">
           <mat-label>Status</mat-label>
-          <input matInput type="text" placeholder="Status" formControlName="role">
+          <input matInput type="text" placeholder="Status" formControlName="status">
         </mat-form-field>
       </div>
 

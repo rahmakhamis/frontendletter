@@ -8,7 +8,7 @@ import { SettingComponent } from './AdminPages/setting/setting.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { AccountComponent } from './account/account.component';
 import { ReportComponent } from './AdminPages/report/report.component';
-import { ListComponent } from './UserPages/list/list.component';
+
 import { UserHomeComponent } from './UserPages/user-home/user-home.component';
 import { UserSettingComponent } from './UserPages/user-setting/user-setting.component';
 import { UserReportComponent } from './UserPages/user-report/user-report.component';
@@ -20,9 +20,10 @@ import { ReceiverSettingComponent } from './ReceiverPages/receiver-setting/recei
 import { FaqComponent } from './AdminPages/faq/faq.component';
 import { UserTraceComponent } from './UserPages/user-trace/user-trace.component';
 import { UserLetterComponent } from './UserPages/user-letter/user-letter.component';
-import { ArchivesComponent } from './UserPages/archives/archives.component';
+
 import { EditUserComponent } from './AdminPages/users/user/edit-user/edit-user.component';
 import { AddUserComponent } from './AdminPages/users/user/add-user/add-user.component';
+import { ArchivesComponent } from './AdminPages/archives/archives.component';
 
 const routes: Routes = [
   {
@@ -86,10 +87,7 @@ const routes: Routes = [
         path: 'senderHome',
         component: UserHomeComponent,
       },
-      {
-        path: 'senderList',
-        component: ListComponent,
-      },
+     
       {
         path: 'senderLetter',
         component: UserLetterComponent,

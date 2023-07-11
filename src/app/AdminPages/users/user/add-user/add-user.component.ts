@@ -26,7 +26,7 @@ export class AddUserComponent {
       role: '',
       gender: '',
       status: '',
-      
+
     });
   }
   reload() {
@@ -39,7 +39,7 @@ export class AddUserComponent {
     if (this.applicantsForm.valid) {
       this.applicantsServices.add(this.applicantsForm.value).subscribe({
         next: () => {
-          alert('Success to Add Data');
+          alert('Success inserted Data');
           this.dialogRef.close();
           this.reload();
         },

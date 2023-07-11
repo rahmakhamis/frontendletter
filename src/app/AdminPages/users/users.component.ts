@@ -8,16 +8,29 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-
-
-
+import { FaqService } from 'src/app/Services/faq.service';
+import { Faq, IFaq } from 'src/app/models/faq';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
 })
-export class UsersComponent  {
+export class UsersComponent {
+  faq: Faq = new Faq();
+  onSubmit() {
+    this.faqService.saveFaq(this.faq).subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (error) => console.log(error)
+    );
+  }
+  delete(id: number) {
+    this.faqService.deleteFaq(id).subscribe(() => {
+      alert(`user with id: ${id} was successfully deleted!`);
+    });
+  }
   applicantsDetails: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -25,18 +38,35 @@ export class UsersComponent  {
   @ViewChild(MatTable) table!: MatTable<any>;
 
   dataSource!: MatTableDataSource<any>;
-  displayedColumns = ['id','name','email','phoneNo','role','gender','status','actions'];
+  displayedColumns = [
+    'id',
+    'name',
+    'email',
+    'phoneNo',
+    'role',
+    'gender',
+    'status',
+    'actions',
+  ];
   notLoggedIn: any;
   constructor(
-    private applicantService:ApplicantsService,
+    private applicantService: ApplicantsService,
     private router: Router,
-    private dialog:MatDialog
+    private dialog: MatDialog,
+    private faqService: FaqService
   ) {}
+
+  faqs: IFaq[] = [];
+
   ngOnInit(): void {
     this.onReload();
     this.dataSource = new MatTableDataSource();
+    this.faqService.getAllFaq().subscribe((res) => {
+      this.faqs = res;
+    });
   }
-  name = 'r'
+
+  name = 'r';
   onReload() {
     this.applicantService.getAll().subscribe({
       next: (res: any) => {
@@ -45,8 +75,7 @@ export class UsersComponent  {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       },
-      error: () => {
-      },
+      error: () => {},
     });
   }
 
@@ -67,12 +96,10 @@ export class UsersComponent  {
     this.dialog.open(EditUserComponent, options);
   }
 
-
-
   onDelete(item: Applicants) {
     this.applicantService.delete(item.id).subscribe({
       next: () => {
-        alert("Delete succfull");
+        alert('Delete succfull');
         this.onReload();
       },
       error: (err) => {
@@ -86,15 +113,12 @@ export class UsersComponent  {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-
-
-sn = 1
-First = 'Khamis'
-Last = 'Ussi'
-Gender = 'Male'
-DOB = '2000-02-23'
-Email = 'jumbezson@gmail.com'
-Status = 'Admin'
-Id = 12343234323
-
+  sn = 1;
+  First = 'Khamis';
+  Last = 'Ussi';
+  Gender = 'Male';
+  DOB = '2000-02-23';
+  Email = 'jumbezson@gmail.com';
+  Status = 'Admin';
+  Id = 12343234323;
 }

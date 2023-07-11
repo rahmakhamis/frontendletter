@@ -5,20 +5,26 @@
   <div class="container card card-body zero my-2 shadow none">
     <div class="row my-2">
       <div class="col-md-4 mb-3">
+        <form (ngSubmit)="onSubmit()">
         <div class="card card-body zero shadow none">
+
           <div class="text-danger h6 fw-light my-2">Question</div>
-          <input type="text" class="form-control zero" placeholder="Question">
+          <input type="text" class="form-control zero" placeholder="Question" name="question" [(ngModel)]="faq.question">
           <div class="text-danger h6 fw-light my-2">Answer</div>
-          <textarea name="" id="" class="form-control zero" placeholder="Answer Here" cols="30" rows="8"></textarea>
+          <textarea name="" id="" class="form-control zero" placeholder="Answer Here" cols="30" rows="8" name="answer"[(ngModel)]="faq.answer"></textarea>
+
         </div>
+        <button type="submit" name="submit " class="btn btn-success w-50 zero" > <i class="fa fa-"></i>
+          Submit </button>
+      </form>
       </div>
       <div class="col-md-8 mb-3">
         <div class="card card-body zero shadow none">
           <div class="text-danger h6 fw-light"> FAQ List</div>
           <div class="table-responsive">
-            <table class="table table-striped table-hover table-bordered table-sm">
+            <table class="table table-striped table-hover table-bordered table-sm " >
               <thead class="text-center">
-                <tr class="table-dark ">
+                <tr class="table-dark">
                   <th class="fw-light myText-color" scope="col">Sn</th>
                   <th class="fw-light myText-color" scope="col">Questions</th>
                   <th class="fw-light myText-color" scope="col">Answers</th>
@@ -26,18 +32,21 @@
                 </tr>
               </thead>
               <tbody class="text-center">
-                <tr>
+                <tr *ngFor="let faq of faqs">
                   <td>
-                    <p></p>
+                    {{ faq.id }}
                   </td>
                   <td>
-                    <p></p>
+                    {{ faq.question }}
                   </td>
                   <td>
-                    <p></p>
+                    {{ faq.answer }}
                   </td>
                   <div class="text-center">
-                    <button class="btn btn-sm btn-danger zero"><i class="fa fa-trash"></i> Delete</button>
+                    <button
+                      class="btn btn-sm btn-danger zero"
+                      (click)="delete(faq.id)"
+                      ><i class="fa fa-trash"></i> Delete</button>
                   </div>
                 </tr>
               </tbody>
@@ -47,8 +56,7 @@
       </div>
     </div>
     <div class="col-md-4 mb-1">
-      <a routerLink="account"> <button type="button" name=" " class="btn btn-success w-50 zero"> <i class="fa fa-"></i>
-          Submit </button></a>
+
     </div>
   </div>
 </div>

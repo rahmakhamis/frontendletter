@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ApplicantsService {
 
-  API = "http://localhost:8080/api/management/manage"
+  API = "http://localhost:8080/api/applicant/applicant"
   constructor(public http: HttpClient) { }
 
   getAll(): Observable<Applicants[]> {
