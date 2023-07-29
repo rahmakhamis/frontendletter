@@ -5,15 +5,15 @@
         <div class="" style="text-align: center;"> <img class="brand fa-spin" src="../../../assets/img/ico/e-latter.ico" alt="e-latter" style="width: 13%"> </div>
         <h2 class="text-center fw-light">LOGIN</h2>
         <!-- <form (ngSubmit)="OnSubmit()"> -->
-         <form (ngSubmit)="OnSubmit()">
+         <form (ngSubmit)="OnSubmit()" [formGroup]="loginForm">
           <div>
           <label class="form-label fw-light"> <i class="fas fa-user"></i> Username:</label>
-          <input type="text" class="form-control mb-3 shadow"  name="Uname" required  autocomplete="off" [(ngModel)]="username" name="username">
+          <input type="text" class="form-control mb-3 shadow"  name="Uname" required  autocomplete="off" formControlName="username">
         </div>
         <!-- <span *ngIf="name.invalid && name.touched" style="color:rgb(202, 25, 25)"> please fill here</span> -->
         <div class="mb-3">
           <label class="form-label fw-light"><i class="fas fa-lock"></i> Password:</label>
-          <input type="{{showPassword ? 'text' : 'password'}}" class="form-control mb-3 shadow card border" name="password" required autocomplete="off" [(ngModel)]="password" name="password" required>
+          <input type="{{showPassword ? 'text' : 'password'}}" class="form-control mb-3 shadow card border" name="password" required autocomplete="off" formControlName="password" required>
         </div>
         <div class= "form-check form-switch mb-3">
             <input type="checkbox" (change)="showPassword = !showPassword" class="form-check-input" value="" id="flexCheckDefault">

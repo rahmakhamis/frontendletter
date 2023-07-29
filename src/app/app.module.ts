@@ -46,6 +46,12 @@ import { UserTraceComponent } from './UserPages/user-trace/user-trace.component'
 import { ViewUserComponent } from './AdminPages/users/user/view-user/view-user.component';
 import { AddUserComponent } from './AdminPages/users/user/add-user/add-user.component';
 import { EditUserComponent } from './AdminPages/users/user/edit-user/edit-user.component';
+import { ReceiverRegistryComponent } from './ReceiverPages/receiver-registry/receiver-registry.component';
+import { ReceiverHODComponent } from './ReceiverPages/receiver-hod/receiver-hod.component';
+import { ReceiverDeanComponent } from './ReceiverPages/receiver-dean/receiver-dean.component';
+import { ReceiverDVCComponent } from './ReceiverPages/receiver-dvc/receiver-dvc.component';
+import { ReceiverVCComponent } from './ReceiverPages/receiver-vc/receiver-vc.component';
+import { ReceiverReportComponent } from './ReceiverPages/receiver-report/receiver-report.component';
 
 
 
@@ -74,6 +80,12 @@ import { EditUserComponent } from './AdminPages/users/user/edit-user/edit-user.c
     ViewUserComponent,
     AddUserComponent,
     EditUserComponent,
+    ReceiverRegistryComponent,
+    ReceiverHODComponent,
+    ReceiverDeanComponent,
+    ReceiverDVCComponent,
+    ReceiverVCComponent,
+    ReceiverReportComponent,
   ],
   imports: [
     BrowserModule,

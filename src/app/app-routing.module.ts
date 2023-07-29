@@ -1,3 +1,5 @@
+import { ReceiverVCComponent } from './ReceiverPages/receiver-vc/receiver-vc.component';
+import { ReceiverDeanComponent } from './ReceiverPages/receiver-dean/receiver-dean.component';
 import { LogoutComponent } from './AdminPages/logout/logout.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -24,6 +26,10 @@ import { UserLetterComponent } from './UserPages/user-letter/user-letter.compone
 import { EditUserComponent } from './AdminPages/users/user/edit-user/edit-user.component';
 import { AddUserComponent } from './AdminPages/users/user/add-user/add-user.component';
 import { ArchivesComponent } from './AdminPages/archives/archives.component';
+import { ReceiverRegistryComponent } from './ReceiverPages/receiver-registry/receiver-registry.component';
+import { ReceiverHODComponent } from './ReceiverPages/receiver-hod/receiver-hod.component';
+import { ReceiverDVCComponent } from './ReceiverPages/receiver-dvc/receiver-dvc.component';
+import { ReceiverReportComponent } from './ReceiverPages/receiver-report/receiver-report.component';
 
 const routes: Routes = [
   {
@@ -117,20 +123,34 @@ const routes: Routes = [
     children: [
       {
         path: 'receiverHome',
-        component: ReceiverHomeComponent,
+        component: ReceiverHomeComponent
       },
       {
-        path: 'setting',
-        component: ReceiverSettingComponent,
+        path: 'receiver-Registry',
+        component: ReceiverRegistryComponent
       },
       {
-        path: 'user-setting',
-        component: UserSettingComponent,
+        path: 'receiver-HOD',
+        component: ReceiverHODComponent,
       },
       {
-        path: 'user-report',
-        component: UserReportComponent,
+        path: 'receiver-Dean',
+        component: ReceiverDeanComponent
       },
+
+      {
+        path: 'receiver-DVC',
+        component: ReceiverDVCComponent
+      },
+      {
+        path: 'receiver-VC',
+        component: ReceiverVCComponent
+      },
+      {
+        path: 'receiver-report',
+        component: ReceiverReportComponent
+      },
+
     ],
   },
 ];

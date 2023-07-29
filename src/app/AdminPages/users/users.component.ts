@@ -1,3 +1,5 @@
+import { FaqService } from './../../Services/faq.service';
+import { User } from 'src/app/models/user';
 import { Applicants } from './../../models/applicants';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
@@ -8,7 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { FaqService } from 'src/app/Services/faq.service';
+
 import { Faq, IFaq } from 'src/app/models/faq';
 
 @Component({
@@ -19,15 +21,15 @@ import { Faq, IFaq } from 'src/app/models/faq';
 export class UsersComponent {
   faq: Faq = new Faq();
   onSubmit() {
-    this.faqService.saveFaq(this.faq).subscribe(
-      (data) => {
+    this.FaqService.saveFaq(this.faq).subscribe(
+      (data: any) => {
         console.log(data);
       },
-      (error) => console.log(error)
+      (error: any) => console.log(error)
     );
   }
   delete(id: number) {
-    this.faqService.deleteFaq(id).subscribe(() => {
+    this.FaqService.deleteFaq(id).subscribe(() => {
       alert(`user with id: ${id} was successfully deleted!`);
     });
   }
@@ -44,6 +46,7 @@ export class UsersComponent {
     'email',
     'phoneNo',
     'role',
+    
     'gender',
     'status',
     'actions',
@@ -53,7 +56,7 @@ export class UsersComponent {
     private applicantService: ApplicantsService,
     private router: Router,
     private dialog: MatDialog,
-    private faqService: FaqService
+    private FaqService: FaqService,
   ) {}
 
   faqs: IFaq[] = [];
@@ -61,12 +64,13 @@ export class UsersComponent {
   ngOnInit(): void {
     this.onReload();
     this.dataSource = new MatTableDataSource();
-    this.faqService.getAllFaq().subscribe((res) => {
+    this.FaqService.getAllFaq().subscribe((res: IFaq[]) => {
       this.faqs = res;
     });
   }
 
   name = 'r';
+  UserService: any;
   onReload() {
     this.applicantService.getAll().subscribe({
       next: (res: any) => {
@@ -113,12 +117,12 @@ export class UsersComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  sn = 1;
-  First = 'Khamis';
-  Last = 'Ussi';
-  Gender = 'Male';
-  DOB = '2000-02-23';
-  Email = 'jumbezson@gmail.com';
-  Status = 'Admin';
-  Id = 12343234323;
+  // sn = 1;
+  // First = 'Khamis';
+  // Last = 'Ussi';
+  // Gender = 'Male';
+  // DOB = '2000-02-23';
+  // Email = 'jumbezson@gmail.com';
+  // Status = 'Admin';
+  // Id = 12343234323;
 }

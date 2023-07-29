@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   users: User[] = [];
 
   fetchTotalNumberOfUsers(): void {
-    this.userService.getAllUsers().subscribe((res) => {
+    this.userService.getAll().subscribe((res) => {
       this.users = res;
       // console.log(res);
 

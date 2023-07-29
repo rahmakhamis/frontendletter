@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ApplicantsService } from 'src/app/Services/applicants.service';
+import { UserService } from 'src/app/Services/user.service';
 import { Applicants } from 'src/app/models/applicants';
 
 @Component({
@@ -17,13 +18,14 @@ export class AddUserComponent {
     public dialogRef: MatDialogRef<AddUserComponent>,
     private _fb: FormBuilder,
     private router: Router,
-    private applicantsServices: ApplicantsService
+    private userServices: UserService
   ) {
     this.applicantsForm= this._fb.group({
       name: '',
       email:'',
       phoneNo: '',
       role: '',
+      password: '',
       gender: '',
       status: '',
 
@@ -37,7 +39,7 @@ export class AddUserComponent {
 
   onFormSubmit() {
     if (this.applicantsForm.valid) {
-      this.applicantsServices.add(this.applicantsForm.value).subscribe({
+      this.userServices.add(this.applicantsForm.value).subscribe({
         next: () => {
           alert('Success inserted Data');
           this.dialogRef.close();
