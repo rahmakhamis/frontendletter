@@ -1,7 +1,18 @@
-import { Management } from './../../models/management';
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ManagementService } from 'src/app/Services/management.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
+import { AddletterComponent } from 'src/app/ReceiverPages/receiver-letter/addletter/addletter.component';
+
+import { SendletterService } from 'src/app/Services/sendletter.service';
+import { User } from 'src/app/models/user';
+import { ApprovedComponent } from '../approved/approved.component';
+
+import { RejectedComponent } from '../rejected/rejected.component';
 
 
 @Component({
@@ -9,32 +20,82 @@ import { ManagementService } from 'src/app/Services/management.service';
   templateUrl: './user-letter.component.html',
   styleUrls: ['./user-letter.component.css']
 })
-export class UserLetterComponent implements OnInit{
-  // managements!: Management [];
-management: Management = new Management();
-constructor(private managementService: ManagementService){}
+export class UserLetterComponent{
+onReject(_t99: any) {
+throw new Error('Method not implemented.');
+}
+onApproved(_t99: any) {
+throw new Error('Method not implemented.');
+}
+  sendDetails: any;
 
-ngOnInit(): void {
-  // this.getAllManagement();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatTable) table!: MatTable<any>;
+
+  dataSource!: MatTableDataSource<any>;
+  displayedColumns = ['id','letterFrom','letterTo','letterDoc','actions',];
+  notLoggedIn: any;
+  constructor(
+    private sendService:SendletterService,
+    private router: Router,
+    private dialog:MatDialog
+  ) {}
+  ngOnInit(): void {
+    this.onReload();
+    this.dataSource = new MatTableDataSource();
+  }
+  name = 'rrrr'
+  onReload() {
+
+    this.sendService.getAll().subscribe({
+      next: (res: any) => {
+        console.log(res)
+        this.dataSource = res;
+        this.dataSource = new MatTableDataSource(res);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      },
+      error: () => {
+      },
+    });
+  }
+
+
+
+  onApprove(item: User) {
+    const options = {
+      data: item,
+      width: '60%',
+      disableClose: true,
+    };
+    this.dialog.open(ApprovedComponent, options);
+  }
+
+  onRejected(item: User) {
+    const options = {
+      data: item,
+      width: '60%',
+      disableClose: true,
+    };
+    this.dialog.open(RejectedComponent, options);
+  }
+
+
+
+
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+
 
 }
 
-// getAllManagement(){
-//   this.managementService.getAllManagement().subscribe(data =>{
-//      this.managements =  data;
-//   })
-// }
-
-newLatter(){
-  this.managementService.saveManagement(this.management).subscribe(data =>{
-    console.log(data);
-  },error => console.log(error));
-}
-onSubmit(){
-  this.newLatter();
 
 
-}
 
 
-}
+

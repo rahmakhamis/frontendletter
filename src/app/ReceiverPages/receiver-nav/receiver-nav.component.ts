@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./receiver-nav.component.css']
 })
 export class ReceiverNavComponent {
-  role = 'Receiver'
+  role = 'SENDER'
 
 }

@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-user-navigation',
   templateUrl: './user-navigation.component.html',
   styleUrls: ['./user-navigation.component.css']
 })
-export class UserNavigationComponent {
+export class UserNavigationComponent implements OnInit{
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+
 
 }

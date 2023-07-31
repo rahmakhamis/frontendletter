@@ -1,0 +1,21 @@
+
+<div class="class container">
+<form [formGroup]="rejectedFrom">
+  <div>
+  <label class="form-label fw-light"> <i class="fas fa-user"></i> rejected :</label>
+  <input type="text" formControlName="rejectedReason" class="form-control mb-3 shadow"  name="Uname" required  autocomplete="off" >
+</div>
+<div class="col-sm-12">
+  <div mat-dialog-actions>
+    <button mat-raised-button color="warn" class="btn btn-danger" matDialogClose="no">Close</button>
+    <button mat-raised-button (click)=" onFormSubmit() " color="primary">save</button>
+  </div>
+</div>
+<div>
+
+ <p class="text-muted mb-2 fw-light" align="center">Copyright &copy; Rahma khamis </p>
+ </div>
+</form>
+</div>
+
+

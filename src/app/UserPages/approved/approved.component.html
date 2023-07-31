@@ -1,0 +1,43 @@
+<form [formGroup]="letterFrom" (ngSubmit)="onFormSubmit()">
+
+    <div class="row">
+
+
+
+<!--
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="example-full-width ">
+          <mat-label>kk</mat-label>
+          <input matInput type="text" placeholder="password" formControlName="kk">
+        </mat-form-field>
+      </div> -->
+
+
+
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="example-full-width ">
+          <mat-label>Receiver</mat-label>
+          <mat-select formControlName="kk">
+            <mat-option value="HOD">HOD</mat-option>
+            <mat-option value="Dean">Dean</mat-option>
+            <mat-option value="DVC">DVC</mat-option>
+            <mat-option value="VC">VC</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+
+    </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <div mat-dialog-actions>
+        <button mat-raised-button color="warn" class="btn btn-danger" matDialogClose="no">Close</button>
+        <button mat-raised-button color="primary">save</button>
+      </div>
+    </div>
+  </div>
+
+</form>
+

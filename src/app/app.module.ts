@@ -25,7 +25,7 @@
     import {MatMenuModule} from '@angular/material/menu';
     import { LoginComponent } from './login/login.component';
 
-    import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { AccountComponent } from './account/account.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { NavigationComponent } from './AdminPages/navigation/navigation.component';
@@ -41,7 +41,7 @@ import { UserSettingComponent } from './UserPages/user-setting/user-setting.comp
 import { UserLetterComponent } from './UserPages/user-letter/user-letter.component';
 import { UsersComponent } from './AdminPages/users/users.component';
 import { ReceiverNavComponent } from './ReceiverPages/receiver-nav/receiver-nav.component';
-import { FaqComponent } from './AdminPages/faq/faq.component';
+
 import { UserTraceComponent } from './UserPages/user-trace/user-trace.component';
 import { ViewUserComponent } from './AdminPages/users/user/view-user/view-user.component';
 import { AddUserComponent } from './AdminPages/users/user/add-user/add-user.component';
@@ -52,6 +52,31 @@ import { ReceiverDeanComponent } from './ReceiverPages/receiver-dean/receiver-de
 import { ReceiverDVCComponent } from './ReceiverPages/receiver-dvc/receiver-dvc.component';
 import { ReceiverVCComponent } from './ReceiverPages/receiver-vc/receiver-vc.component';
 import { ReceiverReportComponent } from './ReceiverPages/receiver-report/receiver-report.component';
+import { ReceiverLetterComponent } from './ReceiverPages/receiver-letter/receiver-letter.component';
+import { AddletterComponent } from './ReceiverPages/receiver-letter/addletter/addletter.component';
+import { RejectedLettersComponent } from './ReceiverPages/rejected-letters/rejected-letters.component';
+import { AprovedLettersComponent } from './ReceiverPages/aproved-letters/aproved-letters.component';
+import { HomeRegistryComponent } from './UserPages/home-registry/home-registry.component';
+import { HodHomeComponent } from './UserPages/hod-home/hod-home.component';
+
+import { HodLettersComponent } from './UserPages/hod-letters/hod-letters.component';
+import { DVCHOMEComponent } from './UserPages/dvc-home/dvc-home.component';
+import { DVCLETTERSComponent } from './UserPages/dvc-letters/dvc-letters.component';
+
+
+
+import { DeanMylettersComponent } from './UserPages/dean-myletters/dean-myletters.component';
+import { DeanHomeComponent } from './UserPages/dean-home/dean-home.component';
+import { DeanLettersComponent } from './UserPages/dean-letters/dean-letters.component';
+import { VcHomeComponent } from './UserPages/vc-home/vc-home.component';
+import { VcMylettersComponent } from './UserPages/vc-myletters/vc-myletters.component';
+import { VcLettersComponent } from './UserPages/vc-letters/vc-letters.component';
+import { HodMylettersComponent } from './UserPages/hod-myletters/hod-myletters.component';
+import { DvcMylettersComponent } from './UserPages/dvc-myletters/dvc-myletters.component';
+import { ApprovedComponent } from './UserPages/approved/approved.component';
+import { RejectedComponent } from './UserPages/rejected/rejected.component';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 
@@ -75,7 +100,7 @@ import { ReceiverReportComponent } from './ReceiverPages/receiver-report/receive
     UserLetterComponent,
     UsersComponent,
     ReceiverNavComponent,
-    FaqComponent,
+
     UserTraceComponent,
     ViewUserComponent,
     AddUserComponent,
@@ -86,12 +111,35 @@ import { ReceiverReportComponent } from './ReceiverPages/receiver-report/receive
     ReceiverDVCComponent,
     ReceiverVCComponent,
     ReceiverReportComponent,
+    ReceiverLetterComponent,
+    AddletterComponent,
+    RejectedLettersComponent,
+    AprovedLettersComponent,
+    HomeRegistryComponent,
+    HodHomeComponent,
+    HodLettersComponent,
+
+
+    DVCHOMEComponent,
+    DVCLETTERSComponent,
+
+
+     DeanHomeComponent,
+     DeanMylettersComponent,
+     DeanLettersComponent,
+     VcHomeComponent,
+     VcMylettersComponent,
+     VcLettersComponent,
+     HodMylettersComponent,
+     DvcMylettersComponent,
+     ApprovedComponent,
+     RejectedComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     ReactiveFormsModule,
     HttpClientModule,
     MatPaginatorModule,
@@ -110,6 +158,7 @@ import { ReceiverReportComponent } from './ReceiverPages/receiver-report/receive
     FormsModule,
     MatFormFieldModule,
     AppRoutingModule,
+    MatSelectModule
 
 
 

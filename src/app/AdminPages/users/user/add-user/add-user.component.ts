@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { ApplicantsService } from 'src/app/Services/applicants.service';
+
 import { UserService } from 'src/app/Services/user.service';
-import { Applicants } from 'src/app/models/applicants';
+
 
 @Component({
   selector: 'app-add-user',

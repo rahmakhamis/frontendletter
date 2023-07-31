@@ -1,9 +1,8 @@
-import { FaqService } from './../../Services/faq.service';
 import { User } from 'src/app/models/user';
-import { Applicants } from './../../models/applicants';
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApplicantsService } from 'src/app/Services/applicants.service';
+
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -11,7 +10,8 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 
-import { Faq, IFaq } from 'src/app/models/faq';
+
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-users',
@@ -19,25 +19,29 @@ import { Faq, IFaq } from 'src/app/models/faq';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent {
-  faq: Faq = new Faq();
-  onSubmit() {
-    this.FaqService.saveFaq(this.faq).subscribe(
-      (data: any) => {
-        console.log(data);
-      },
-      (error: any) => console.log(error)
-    );
-  }
-  delete(id: number) {
-    this.FaqService.deleteFaq(id).subscribe(() => {
-      alert(`user with id: ${id} was successfully deleted!`);
-    });
-  }
+onEdit(_t111: any) {
+throw new Error('Method not implemented.');
+}
+  // faq: Faq = new Faq();
+  // onSubmit() {
+  //   this.FaqService.saveFaq(this.faq).subscribe(
+  //     (data: any) => {
+  //       console.log(data);
+  //     },
+  //     (error: any) => console.log(error)
+  //   );
+  // }
+  // delete(id: number) {
+  //   this.FaqService.deleteFaq(id).subscribe(() => {
+  //     alert(`user with id: ${id} was successfully deleted!`);
+  //   });
+  // }
   applicantsDetails: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<any>;
+
 
   dataSource!: MatTableDataSource<any>;
   displayedColumns = [
@@ -46,33 +50,32 @@ export class UsersComponent {
     'email',
     'phoneNo',
     'role',
-    
+    'password',
     'gender',
     'status',
     'actions',
   ];
   notLoggedIn: any;
   constructor(
-    private applicantService: ApplicantsService,
+    private userService: UserService,
     private router: Router,
     private dialog: MatDialog,
-    private FaqService: FaqService,
   ) {}
 
-  faqs: IFaq[] = [];
+  // faqs: IFaq[] = [];
 
-  ngOnInit(): void {
-    this.onReload();
-    this.dataSource = new MatTableDataSource();
-    this.FaqService.getAllFaq().subscribe((res: IFaq[]) => {
-      this.faqs = res;
-    });
-  }
+  // ngOnInit(): void {
+  //   this.onReload();
+  //   this.dataSource = new MatTableDataSource();
+  //   this.FaqService.getAllFaq().subscribe((res: IFaq[]) => {
+  //     this.faqs = res;
+  //   });
+  // }
 
   name = 'r';
   UserService: any;
   onReload() {
-    this.applicantService.getAll().subscribe({
+    this.userService.getAll().subscribe({
       next: (res: any) => {
         this.dataSource = res;
         this.dataSource = new MatTableDataSource(res);
@@ -91,17 +94,17 @@ export class UsersComponent {
     this.dialog.open(AddUserComponent, options);
   }
 
-  onEdit(item: Applicants) {
-    const options = {
-      data: item,
-      width: '60%',
-      disableClose: true,
-    };
-    this.dialog.open(EditUserComponent, options);
-  }
+  // onEdit(item: Applicants) {
+  //   const options = {
+  //     data: item,
+  //     width: '60%',
+  //     disableClose: true,
+  //   };
+  //   this.dialog.open(EditUserComponent, options);
+  // }
 
-  onDelete(item: Applicants) {
-    this.applicantService.delete(item.id).subscribe({
+  onDelete(item: User) {
+    this.userService.delete(item.id).subscribe({
       next: () => {
         alert('Delete succfull');
         this.onReload();
