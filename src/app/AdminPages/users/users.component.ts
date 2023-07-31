@@ -19,23 +19,10 @@ import { UserService } from 'src/app/Services/user.service';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent {
-onEdit(_t111: any) {
-throw new Error('Method not implemented.');
-}
-  // faq: Faq = new Faq();
-  // onSubmit() {
-  //   this.FaqService.saveFaq(this.faq).subscribe(
-  //     (data: any) => {
-  //       console.log(data);
-  //     },
-  //     (error: any) => console.log(error)
-  //   );
-  // }
-  // delete(id: number) {
-  //   this.FaqService.deleteFaq(id).subscribe(() => {
-  //     alert(`user with id: ${id} was successfully deleted!`);
-  //   });
-  // }
+// onEdit(_t111: any) {
+// throw new Error('Method not implemented.');
+// }
+
   applicantsDetails: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -44,16 +31,8 @@ throw new Error('Method not implemented.');
 
 
   dataSource!: MatTableDataSource<any>;
-  displayedColumns = [
-    'id',
-    'name',
-    'email',
-    'phoneNo',
-    'role',
-    'password',
-    'gender',
-    'status',
-    'actions',
+  displayedColumns = ['id','name','email','phoneNo','role','password','gender','actions',
+
   ];
   notLoggedIn: any;
   constructor(
@@ -61,18 +40,14 @@ throw new Error('Method not implemented.');
     private router: Router,
     private dialog: MatDialog,
   ) {}
+  ngOnInit(): void {
+    this.onReload();
+    this.dataSource = new MatTableDataSource();
+  }
 
-  // faqs: IFaq[] = [];
 
-  // ngOnInit(): void {
-  //   this.onReload();
-  //   this.dataSource = new MatTableDataSource();
-  //   this.FaqService.getAllFaq().subscribe((res: IFaq[]) => {
-  //     this.faqs = res;
-  //   });
-  // }
 
-  name = 'r';
+
   UserService: any;
   onReload() {
     this.userService.getAll().subscribe({
@@ -94,14 +69,14 @@ throw new Error('Method not implemented.');
     this.dialog.open(AddUserComponent, options);
   }
 
-  // onEdit(item: Applicants) {
-  //   const options = {
-  //     data: item,
-  //     width: '60%',
-  //     disableClose: true,
-  //   };
-  //   this.dialog.open(EditUserComponent, options);
-  // }
+  onEdit(item: User) {
+    const options = {
+      data: item,
+      width: '60%',
+      disableClose: true,
+    };
+    this.dialog.open(EditUserComponent, options);
+  }
 
   onDelete(item: User) {
     this.userService.delete(item.id).subscribe({

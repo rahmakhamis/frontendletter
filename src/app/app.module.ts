@@ -33,7 +33,7 @@ import { HomeComponent } from './AdminPages/home/home.component';
 import { LogoutComponent } from './AdminPages/logout/logout.component';
 import { SettingComponent } from './AdminPages/setting/setting.component';
 import { ReportComponent } from './AdminPages/report/report.component';
-import { ListComponent } from './UserPages/list/list.component';
+
 import { UserHomeComponent } from './UserPages/user-home/user-home.component';
 import { UserNavigationComponent } from './UserPages/user-navigation/user-navigation.component';
 import { UserReportComponent } from './UserPages/user-report/user-report.component';
@@ -92,7 +92,7 @@ import {MatSelectModule} from '@angular/material/select';
     LogoutComponent,
     SettingComponent,
     ReportComponent,
-    ListComponent,
+    
     UserHomeComponent,
     UserNavigationComponent,
     UserReportComponent,

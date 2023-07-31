@@ -27,7 +27,7 @@ export class AddUserComponent {
       role: '',
       password: '',
       gender: '',
-      status: '',
+      
 
     });
   }

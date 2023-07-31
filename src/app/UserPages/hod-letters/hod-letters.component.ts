@@ -31,11 +31,12 @@ export class HodLettersComponent {
     private router: Router,
     private dialog:MatDialog
   ) {}
+  // kinaangalia kitu cha mwanzo kikirun kwenye system
   ngOnInit(): void {
     this.onReload();
     this.dataSource = new MatTableDataSource();
   }
-  name = 'rrrr'
+//  inareload data ukizihitaji
   onReload() {
 
     this.sendService.getAll().subscribe({

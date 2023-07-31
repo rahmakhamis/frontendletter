@@ -30,7 +30,7 @@ import { UserLetterComponent } from './UserPages/user-letter/user-letter.compone
 
 import { EditUserComponent } from './AdminPages/users/user/edit-user/edit-user.component';
 import { AddUserComponent } from './AdminPages/users/user/add-user/add-user.component';
-import { ArchivesComponent } from './AdminPages/archives/archives.component';
+
 import { ReceiverRegistryComponent } from './ReceiverPages/receiver-registry/receiver-registry.component';
 import { ReceiverHODComponent } from './ReceiverPages/receiver-hod/receiver-hod.component';
 import { ReceiverDVCComponent } from './ReceiverPages/receiver-dvc/receiver-dvc.component';
