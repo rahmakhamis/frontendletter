@@ -2,8 +2,10 @@
 
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { SendletterService } from 'src/app/Services/sendletter.service';
 
 import { UserService } from 'src/app/Services/user.service';
+import { Letter } from 'src/app/models/letter';
 import { User } from 'src/app/models/user';
 
 @Component({
@@ -13,8 +15,10 @@ import { User } from 'src/app/models/user';
 })
 export class HomeComponent implements OnInit {
   FaqService: any;
-  constructor(private userService: UserService, ) {}
-
+totalLettersApproved: any;
+  constructor(private userService: UserService, private letterService: SendletterService,
+  lettersApproved:SendletterService,) {}
+// card1
   totalUsers: number = 0;
   users: User[] = [];
 
@@ -26,11 +30,41 @@ export class HomeComponent implements OnInit {
       this.totalUsers = res.length | 0;
     });
   }
-
   ngOnInit(): void {
     this.fetchTotalNumberOfUsers();
-
   }
+
+  // card2
+  totalLetters: number = 0;
+  letters: Letter[] = [];
+
+  fetchTotalNumberOfLetters(): void {
+    this.userService.getAll().subscribe((res) => {
+      this.users = res;
+      // console.log(res);
+
+      this.totalLetters = res.length | 0;
+    });
+  }
+  // card3
+
+  // LettersApproved: number = 0;
+  // lettersApproved: Approved[] = [];
+
+  // fetchTotalNumberOfLettersApproved(): void {
+  //   this.userService.getAll().subscribe((res) => {
+  //     this.users = res;
+  //     // console.log(res);
+
+  //     this.totalLetters = res.length | 0;
+  //   });
+  // }
+
+
+
+
+
+
 
 
 

@@ -23,7 +23,13 @@
     <div class="col-sm-6">
       <mat-form-field appearance="outline" class="example-full-width ">
         <mat-label>Role</mat-label>
-        <input matInput type="text" placeholder="role" formControlName="role">
+        <mat-select formControlName="role">
+          <mat-option value="HOD">HOD</mat-option>
+          <mat-option value="Dean">Dean</mat-option>
+          <mat-option value="DVC">DVC</mat-option>
+          <mat-option value="VC">VC</mat-option>
+
+        </mat-select>
       </mat-form-field>
     </div>
 
@@ -33,7 +39,7 @@
         <input matInput type="password" placeholder="password" formControlName="password">
       </mat-form-field>
     </div>
-    
+
      <div class="col-sm-6">
       <mat-radio-group aria-label="Select an option" formControlName="gender">
         <mat-label><b>Gender</b></mat-label>

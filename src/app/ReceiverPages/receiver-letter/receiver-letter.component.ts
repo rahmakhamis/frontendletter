@@ -11,6 +11,7 @@ import { AddletterComponent } from './addletter/addletter.component';
 import { EditUserComponent } from 'src/app/AdminPages/users/user/edit-user/edit-user.component';
 import { Letter } from 'src/app/models/letter';
 import { SendletterService } from 'src/app/Services/sendletter.service';
+import { ViewDocumentComponent } from 'src/app/view-document/view-document.component';
 
 @Component({
   selector: 'app-receiver-letter',
@@ -61,14 +62,14 @@ export class ReceiverLetterComponent {
     this.dialog.open(AddletterComponent, options);
   }
 
-  // onEdit(item: User) {
-  //   const options = {
-  //     data: item,
-  //     width: '60%',
-  //     disableClose: true,
-  //   };
-  //   this.dialog.open(EditPatientComponent, options);
-  // }
+  view(element:any){
+    const options = {
+      data: element,
+      width: '60%',
+      disableClose: true,
+    };
+    this.dialog.open(ViewDocumentComponent, options);
+  }
 
 
 

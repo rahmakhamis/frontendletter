@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent {
+  constructor(){}
+  PrintThisPage(){
+    window.print();
+  }
 
 }

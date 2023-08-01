@@ -3,8 +3,8 @@ import { HodMylettersComponent } from './UserPages/hod-myletters/hod-myletters.c
 import { DeanLettersComponent } from './UserPages/dean-letters/dean-letters.component';
 import { VcLettersComponent } from './UserPages/vc-letters/vc-letters.component';
 import { HodHomeComponent } from './UserPages/hod-home/hod-home.component';
-import { ReceiverVCComponent } from './ReceiverPages/receiver-vc/receiver-vc.component';
-import { ReceiverDeanComponent } from './ReceiverPages/receiver-dean/receiver-dean.component';
+
+
 import { LogoutComponent } from './AdminPages/logout/logout.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -17,24 +17,24 @@ import { AccountComponent } from './account/account.component';
 import { ReportComponent } from './AdminPages/report/report.component';
 
 import { UserHomeComponent } from './UserPages/user-home/user-home.component';
-import { UserSettingComponent } from './UserPages/user-setting/user-setting.component';
-import { UserReportComponent } from './UserPages/user-report/user-report.component';
+
+
 import { UserNavigationComponent } from './UserPages/user-navigation/user-navigation.component';
 import { UsersComponent } from './AdminPages/users/users.component';
 import { ReceiverNavComponent } from './ReceiverPages/receiver-nav/receiver-nav.component';
 import { ReceiverHomeComponent } from './ReceiverPages/receiver-home/receiver-home.component';
-import { ReceiverSettingComponent } from './ReceiverPages/receiver-setting/receiver-setting.component';
 
-import { UserTraceComponent } from './UserPages/user-trace/user-trace.component';
+
+
 import { UserLetterComponent } from './UserPages/user-letter/user-letter.component';
 
 import { EditUserComponent } from './AdminPages/users/user/edit-user/edit-user.component';
 import { AddUserComponent } from './AdminPages/users/user/add-user/add-user.component';
 
-import { ReceiverRegistryComponent } from './ReceiverPages/receiver-registry/receiver-registry.component';
-import { ReceiverHODComponent } from './ReceiverPages/receiver-hod/receiver-hod.component';
-import { ReceiverDVCComponent } from './ReceiverPages/receiver-dvc/receiver-dvc.component';
-import { ReceiverReportComponent } from './ReceiverPages/receiver-report/receiver-report.component';
+
+
+
+
 import { ReceiverLetterComponent } from './ReceiverPages/receiver-letter/receiver-letter.component';
 import { RejectedLettersComponent } from './ReceiverPages/rejected-letters/rejected-letters.component';
 import { AprovedLettersComponent } from './ReceiverPages/aproved-letters/aproved-letters.component';
@@ -113,10 +113,10 @@ const routes: Routes = [
         path: 'senderLetter',
         component: UserLetterComponent,
       },
-      {
-        path: 'user-setting',
-        component: UserSettingComponent,
-      },
+      // {
+      //   path: 'user-setting',
+      //   component: UserSettingComponent,
+      // },
       // hod
       {
         path: 'hod-home',
@@ -172,10 +172,9 @@ const routes: Routes = [
 
 
 
-      {
-        path: 'user-report',
-        component: UserReportComponent,
-      },
+      
+
+
 
 
     ],
@@ -189,6 +188,13 @@ const routes: Routes = [
         path: 'receiverHome',
         component: ReceiverHomeComponent
       },
+
+      {
+        path: 'userHome',
+        component: UserHomeComponent
+      },
+
+
       {
         path: 'receiver-letter',
         component: ReceiverLetterComponent
@@ -202,18 +208,8 @@ const routes: Routes = [
         component: AprovedLettersComponent
       },
 
-      // {
-      //   path: 'receiver-DVC',
-      //   component: ReceiverDVCComponent
-      // },
-      // {
-      //   path: 'receiver-VC',
-      //   component: ReceiverVCComponent
-      // },
-      // {
-      //   path: 'receiver-report',
-      //   component: ReceiverReportComponent
-      // },
+
+
 
     ],
   },

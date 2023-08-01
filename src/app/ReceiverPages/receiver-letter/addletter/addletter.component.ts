@@ -12,6 +12,7 @@ import { SendletterService } from 'src/app/Services/sendletter.service';
 })
 export class AddletterComponent implements OnInit {
  letterForm!: FormGroup
+ image!:any;
 
   constructor(
     public dialogRef: MatDialogRef<AddletterComponent>,
@@ -36,7 +37,18 @@ export class AddletterComponent implements OnInit {
 
     });
 
+
   }
+//kubadili doc into base64 encription
+  handleUpload(event : any ){
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+        this.image = reader.result;
+    };
+}
+
   reload() {
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate(['/receiver-letter']);
@@ -46,6 +58,9 @@ export class AddletterComponent implements OnInit {
   onFormSubmit() {
     if (this.letterForm.valid) {
 
+      if(this.image){
+        this.letterForm.value.letterDoc = this.image;
+      }
       console.log(this.letterForm.value)
       this.letterService.add(this.letterForm.value).subscribe({
         next: () => {

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReceiverDeanComponent } from './receiver-dean.component';
+import { ViewDocumentComponent } from './view-document.component';
 
-describe('ReceiverDeanComponent', () => {
-  let component: ReceiverDeanComponent;
-  let fixture: ComponentFixture<ReceiverDeanComponent>;
+describe('ViewDocumentComponent', () => {
+  let component: ViewDocumentComponent;
+  let fixture: ComponentFixture<ViewDocumentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReceiverDeanComponent ]
+      declarations: [ ViewDocumentComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ReceiverDeanComponent);
+    fixture = TestBed.createComponent(ViewDocumentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

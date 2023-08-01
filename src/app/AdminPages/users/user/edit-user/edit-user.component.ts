@@ -34,7 +34,7 @@ applicantForm: any;
       role: data.role,
       password: data.password,
       gender: data.gender,
-      status: data.status,
+      // status: data.status,
 
     });
   }

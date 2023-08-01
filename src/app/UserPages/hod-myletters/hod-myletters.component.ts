@@ -35,7 +35,7 @@ export class HodMylettersComponent {
     this.onReload();
     this.dataSource = new MatTableDataSource();
   }
-  name = 'rrrr'
+
   onReload() {
 
     this.sendService.getAll().subscribe({

@@ -36,22 +36,21 @@ import { ReportComponent } from './AdminPages/report/report.component';
 
 import { UserHomeComponent } from './UserPages/user-home/user-home.component';
 import { UserNavigationComponent } from './UserPages/user-navigation/user-navigation.component';
-import { UserReportComponent } from './UserPages/user-report/user-report.component';
-import { UserSettingComponent } from './UserPages/user-setting/user-setting.component';
+
+
 import { UserLetterComponent } from './UserPages/user-letter/user-letter.component';
 import { UsersComponent } from './AdminPages/users/users.component';
 import { ReceiverNavComponent } from './ReceiverPages/receiver-nav/receiver-nav.component';
 
-import { UserTraceComponent } from './UserPages/user-trace/user-trace.component';
+
 import { ViewUserComponent } from './AdminPages/users/user/view-user/view-user.component';
 import { AddUserComponent } from './AdminPages/users/user/add-user/add-user.component';
 import { EditUserComponent } from './AdminPages/users/user/edit-user/edit-user.component';
-import { ReceiverRegistryComponent } from './ReceiverPages/receiver-registry/receiver-registry.component';
-import { ReceiverHODComponent } from './ReceiverPages/receiver-hod/receiver-hod.component';
-import { ReceiverDeanComponent } from './ReceiverPages/receiver-dean/receiver-dean.component';
-import { ReceiverDVCComponent } from './ReceiverPages/receiver-dvc/receiver-dvc.component';
-import { ReceiverVCComponent } from './ReceiverPages/receiver-vc/receiver-vc.component';
-import { ReceiverReportComponent } from './ReceiverPages/receiver-report/receiver-report.component';
+
+
+
+
+
 import { ReceiverLetterComponent } from './ReceiverPages/receiver-letter/receiver-letter.component';
 import { AddletterComponent } from './ReceiverPages/receiver-letter/addletter/addletter.component';
 import { RejectedLettersComponent } from './ReceiverPages/rejected-letters/rejected-letters.component';
@@ -76,6 +75,8 @@ import { DvcMylettersComponent } from './UserPages/dvc-myletters/dvc-myletters.c
 import { ApprovedComponent } from './UserPages/approved/approved.component';
 import { RejectedComponent } from './UserPages/rejected/rejected.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ViewDocumentComponent } from './view-document/view-document.component';
+
 
 
 
@@ -92,25 +93,25 @@ import {MatSelectModule} from '@angular/material/select';
     LogoutComponent,
     SettingComponent,
     ReportComponent,
-    
+
     UserHomeComponent,
     UserNavigationComponent,
-    UserReportComponent,
-    UserSettingComponent,
+    
+
     UserLetterComponent,
     UsersComponent,
     ReceiverNavComponent,
 
-    UserTraceComponent,
+
     ViewUserComponent,
     AddUserComponent,
     EditUserComponent,
-    ReceiverRegistryComponent,
-    ReceiverHODComponent,
-    ReceiverDeanComponent,
-    ReceiverDVCComponent,
-    ReceiverVCComponent,
-    ReceiverReportComponent,
+
+
+
+
+
+
     ReceiverLetterComponent,
     AddletterComponent,
     RejectedLettersComponent,
@@ -134,6 +135,8 @@ import {MatSelectModule} from '@angular/material/select';
      DvcMylettersComponent,
      ApprovedComponent,
      RejectedComponent,
+     ViewDocumentComponent,
+
 
   ],
   imports: [

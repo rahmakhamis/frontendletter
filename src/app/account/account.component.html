@@ -4,33 +4,38 @@
       <div class="card-body bg">
         <div class="" style="text-align: center;"> <img class="brand fa-spin" src="../../../assets/img/ico/e-latter.ico" alt="e-latter" style="width: 10%"> </div>
         <h3 class="text-center">CREATE ACCOUNT</h3>
-        <form method="POST">
+        <form [formGroup]="regeForm" (ngSubmit)="onFormSubmit()">
           <div class="row">
             <div class="col-md-6">
-              <label class="form-label"> <i class="fa fa-user"></i> First Name:</label>
-              <input type="text" class="form-control mb-3 shadow card border" name="Uname" required autocomplete="off">
+              <label class="form-label"> <i class="fa fa-user"></i> Name:</label>
+              <input type="text" class="form-control mb-3 shadow card border" name="name" formControlName="name">
              </div>
 
-             <div class="col-md-6">
-              <label class="form-label"><i class="fa fa-user"></i> Last Name:</label>
-              <input type="text" class="form-control mb-3 shadow card border" name="password" required autocomplete="off">
-            </div>
             <div class="col-md-6">
-              <label class="form-label"><i class="fas fa-venus-mars"></i> Gender:</label>
-              <input type="text" class="form-control mb-3 shadow card border" name="password" required autocomplete="off">
+              <label class="form-label"><i class="fas fa-phone"></i> PHONE NO:</label>
+              <input type="number" class="form-control mb-3 shadow card border" name="phoneNo" required autocomplete="off" formControlName="phoneNo">
               </div>
 
          <div class=" col-md-6">
-            <label class="form-label"><i class="fas fa-calendar"></i> Date of Birth:</label>
-            <input type="text" class="form-control mb-3 shadow card border" name="password" required autocomplete="off">
+            <label class="form-label"><i class="fas fa-key"></i> PASSWORD:</label>
+            <input type="password" class="form-control mb-3 shadow card border" name="password" required autocomplete="off" formControlName="password">
         </div>
 
         <div class=" col-md-6">
-          <label class="form-label"><i class="fas fa-identity"></i>Id No:</label>
-          <input type="text" class="form-control mb-3 shadow card border" name="password" required autocomplete="off">
+        <label class="form-label"><i class="fas fa-venus-mars"></i>GENDER:</label>
+        <select name="gender" formControlName="gender" id="" class="form-select mb-3 shadow card border">
+          <option value="" selected disabled>Choose..</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+    </div>
+
+      <div class="col-md-12">
+        <label class="form-label"><i class="fa fa-envelope"></i>Email:</label>
+        <input type="text" class="form-control mb-3 shadow card border"  placeholder="rahmakhamis818@gmail.com"name="email" required autocomplete="off" formControlName="email">
       </div>
 
-      <div class=" col-md-6">
+      <!-- <div class=" col-md-6">
         <label class="form-label"><i class="fas fa-user"></i> Status:</label>
         <select name="status" id="" class="form-select mb-3 shadow card border">
           <option value="" selected disabled>Choose..</option>
@@ -42,15 +47,19 @@
     <div class=" col-md-12">
       <label class="form-label"><i class="fas fa-envelope"></i> Email</label>
       <input type="text" class="form-control mb-3 shadow card border" placeholder="rahmakhamis818@gmail.com" name="password" required autocomplete="off">
-  </div>
+  </div> -->
 </div>
 
 <div class="row text-center">
-  <div class="col-md-6">
+  <!-- <div class="col-md-6">
     <a routerLink=""> <button type ="button" name=" "class="btn btn-primary w-100 mb-4">Login here</button></a>
     </div>
 <div class="col-md-6">
-<a> <button type ="button" name=" "class="btn btn-success w-100 mb-4">REGISTER</button></a>
+<a> <button type="submit" name=" "class="btn btn-success w-100 mb-4" >REGISTER</button></a>
+</div> -->
+<div >
+  <button mat-raised-button color="warn" class="btn btn-danger btn-close" aria-label="close" >Close</button>
+  <button mat-raised-button color="primary">regester</button>
 </div>
 </div>
 <p class="text-muted mb-2" align="center">Copyright &copy; Rahma khamis </p>
