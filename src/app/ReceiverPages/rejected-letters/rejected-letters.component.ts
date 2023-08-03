@@ -6,6 +6,10 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { SendletterService } from 'src/app/Services/sendletter.service';
+import { ApprovedComponent } from 'src/app/UserPages/approved/approved.component';
+import { RejectedComponent } from 'src/app/UserPages/rejected/rejected.component';
+import { User } from 'src/app/models/user';
+import { ViewDocumentComponent } from 'src/app/view-document/view-document.component';
 
 @Component({
   selector: 'app-rejected-letters',
@@ -13,6 +17,15 @@ import { SendletterService } from 'src/app/Services/sendletter.service';
   styleUrls: ['./rejected-letters.component.css']
 })
 export class RejectedLettersComponent {
+// onRejected(_t121: any) {
+// throw new Error('Method not implemented.');
+// }
+// onEdit(_t121: any) {
+// throw new Error('Method not implemented.');
+// }
+// view(_t60: any) {
+// throw new Error('Method not implemented.');
+// }
   sendDetails: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -20,7 +33,7 @@ export class RejectedLettersComponent {
   @ViewChild(MatTable) table!: MatTable<any>;
 
   dataSource!: MatTableDataSource<any>;
-  displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','kk','rejectedDocReason','rejectedReason',];
+  displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','actions',];
   notLoggedIn: any;
   constructor(
     private sendService:SendletterService,
@@ -31,7 +44,9 @@ export class RejectedLettersComponent {
     this.onReload();
     this.dataSource = new MatTableDataSource();
   }
-  name = 'rrrr'
+
+
+
   onReload() {
 
     this.sendService.getAll().subscribe({
@@ -46,6 +61,36 @@ export class RejectedLettersComponent {
       },
     });
   }
+
+  // onEdit(item: User) {
+  //   const options = {
+  //     data: item,
+  //     width: '60%',
+  //     disableClose: true,
+  //   };
+  //   this.dialog.open(ApprovedComponent, options);
+  // }
+
+  view(element:any){
+    const options = {
+      data: element,
+      width: '60%',
+      disableClose: true,
+    };
+    this.dialog.open(ViewDocumentComponent, options);
+  }
+
+
+
+  onRejected(item: User) {
+    const options = {
+      data: item,
+      width: '60%',
+      disableClose: true,
+    };
+    this.dialog.open(RejectedComponent, options);
+  }
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

@@ -14,7 +14,7 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  FaqService: any;
+  
 totalLettersApproved: any;
   constructor(private userService: UserService, private letterService: SendletterService,
   lettersApproved:SendletterService,) {}

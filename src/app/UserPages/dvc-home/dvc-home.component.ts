@@ -1,10 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SendletterService } from 'src/app/Services/sendletter.service';
+import { UserService } from 'src/app/Services/user.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-dvc-home',
   templateUrl: './dvc-home.component.html',
   styleUrls: ['./dvc-home.component.css']
 })
-export class DVCHOMEComponent {
+export class DVCHOMEComponent implements OnInit {
+  totalLettersApproved: any;
+totalLetters: any;
+constructor(private userService: UserService, private letterService: SendletterService,
+lettersApproved:SendletterService,) {}
+// card1
+totalUsers: number = 0;
+users: User[] = [];
+
+fetchTotalNumberOfUsers(): void {
+  this.userService.getAll().subscribe((res) => {
+    this.users = res;
+    // console.log(res);
+
+    this.totalUsers = res.length | 0;
+  });
+}
+ngOnInit(): void {
+  this.fetchTotalNumberOfUsers();
+}
 
 }

@@ -64,7 +64,7 @@ export class AddletterComponent implements OnInit {
       console.log(this.letterForm.value)
       this.letterService.add(this.letterForm.value).subscribe({
         next: () => {
-          alert('Success inserted Data');
+          alert('Success inserted letter');
           this.dialogRef.close();
           this.reload();
         },

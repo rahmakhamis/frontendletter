@@ -8,6 +8,9 @@ import { Letter } from '../models/letter';
   providedIn: 'root'
 })
 export class SendletterService {
+  findLetterUsingletterTo(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
   rejected(id: number | undefined) {
     throw new Error('Method not implemented.');
   }
@@ -42,6 +45,17 @@ export class SendletterService {
     const url = `${this.API+"/kk"}/${id}`;
     return this.http.put<Letter>(url, body);
   }
+
+  findLetterUsingKupitiaKwa(kk: any): Observable<Letter> {
+    const url = `${this.API+"/getKk"}/${kk}`;
+    return this.http.get<Letter>(url);
+  }
+
+  findLetterUsingLetterTo(letterTo: any): Observable<Letter> {
+    const url = `${this.API+"/getLetterTo"}/${letterTo}`;
+    return this.http.get<Letter>(url);
+  }
+
   updateReject(id: any, body: any): Observable<Letter> {
     const url = `${this.API+"/reject"}/${id}`;
     return this.http.put<Letter>(url, body);

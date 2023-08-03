@@ -57,7 +57,7 @@ export class ApprovedComponent {
     if (this.letterFrom.valid) {
       this.sendServiceLetter.updatekk(id, data).subscribe({
         next: () => {
-          alert('Success to Update Data');
+          alert('Approved');
           this.dialogRef.close();
           this.reload();
         },

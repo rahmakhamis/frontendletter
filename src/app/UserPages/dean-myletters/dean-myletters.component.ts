@@ -16,6 +16,9 @@ import { ApprovedComponent } from '../approved/approved.component';
   styleUrls: ['./dean-myletters.component.css']
 })
 export class DeanMylettersComponent {
+view(_t55: any) {
+throw new Error('Method not implemented.');
+}
   onReject(_t99: any) {
     throw new Error('Method not implemented.');
     }
@@ -29,7 +32,7 @@ export class DeanMylettersComponent {
       @ViewChild(MatTable) table!: MatTable<any>;
 
       dataSource!: MatTableDataSource<any>;
-      displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','kk','actions',];
+      displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','actions',];
       notLoggedIn: any;
       constructor(
         private sendService:SendletterService,
@@ -40,12 +43,12 @@ export class DeanMylettersComponent {
         this.onReload();
         this.dataSource = new MatTableDataSource();
       }
-      name = 'rrrr'
+
       onReload() {
 
-        this.sendService.getAll().subscribe({
+        this.sendService.findLetterUsingKupitiaKwa("DEAN").subscribe({
           next: (res: any) => {
-            console.log(res)
+            console.log("Kupitia kwa",res)
             this.dataSource = res;
             this.dataSource = new MatTableDataSource(res);
             this.dataSource.paginator = this.paginator;

@@ -5,6 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { SendletterService } from 'src/app/Services/sendletter.service';
+import { ViewDocumentComponent } from 'src/app/view-document/view-document.component';
 
 @Component({
   selector: 'app-aproved-letters',
@@ -26,7 +27,7 @@ sendDetails: any;
   @ViewChild(MatTable) table!: MatTable<any>;
 
   dataSource!: MatTableDataSource<any>;
-  displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','kk','rejectedDocReason','rejectedReason',];
+  displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','rejectedDocReason','rejectedReason'];
   notLoggedIn: any;
   constructor(
     private sendService:SendletterService,
@@ -51,6 +52,15 @@ sendDetails: any;
       error: () => {
       },
     });
+  }
+
+  view(element:any){
+    const options = {
+      data: element,
+      width: '60%',
+      disableClose: true,
+    };
+    this.dialog.open(ViewDocumentComponent, options);
   }
 
   applyFilter(event: Event) {

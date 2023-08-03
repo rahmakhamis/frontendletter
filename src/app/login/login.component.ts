@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         if(response.role == null){
           alert("Incorrect username or password ")
           this.router.navigate(['/'])
-        }else if (response.role == "VC" || response.role == "DVC" || response.role == "DEAN" || response.role == "REGISTRAR" || response.role == "HOD"){
+        }else if (response.role == "VC" || response.role == "DVC" || response.role == "DEAN" || response.role == "REGISTRAR" || response.role == "HOD" ){
           localStorage.setItem("userId", response.id)
           localStorage.setItem("name" , response.name)
           localStorage.setItem("role", response.role)

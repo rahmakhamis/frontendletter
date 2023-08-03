@@ -9,6 +9,7 @@ import { SendletterService } from 'src/app/Services/sendletter.service';
 import { User } from 'src/app/models/user';
 import { RejectedComponent } from '../rejected/rejected.component';
 import { ApprovedComponent } from '../approved/approved.component';
+import { ViewDocumentComponent } from 'src/app/view-document/view-document.component';
 
 @Component({
   selector: 'app-vc-letters',
@@ -29,7 +30,7 @@ export class VcLettersComponent {
       @ViewChild(MatTable) table!: MatTable<any>;
 
       dataSource!: MatTableDataSource<any>;
-      displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','kk','actions',];
+      displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','actions',];
       notLoggedIn: any;
       constructor(
         private sendService:SendletterService,
@@ -40,7 +41,7 @@ export class VcLettersComponent {
         this.onReload();
         this.dataSource = new MatTableDataSource();
       }
-      name = 'rrrr'
+
       onReload() {
 
         this.sendService.getAll().subscribe({
@@ -62,6 +63,15 @@ export class VcLettersComponent {
           disableClose: true,
         };
         this.dialog.open(AddletterComponent, options);
+      }
+
+      view(element:any){
+        const options = {
+          data: element,
+          width: '60%',
+          disableClose: true,
+        };
+        this.dialog.open(ViewDocumentComponent, options);
       }
 
       onEdit(item: User) {

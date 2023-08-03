@@ -16,6 +16,9 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./hod-myletters.component.css']
 })
 export class HodMylettersComponent {
+view(_t55: any) {
+throw new Error('Method not implemented.');
+}
 
   sendDetails: any;
 
@@ -24,7 +27,7 @@ export class HodMylettersComponent {
   @ViewChild(MatTable) table!: MatTable<any>;
 
   dataSource!: MatTableDataSource<any>;
-  displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','kk','actions',];
+  displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','actions',];
   notLoggedIn: any;
   constructor(
     private sendService:SendletterService,
@@ -38,9 +41,9 @@ export class HodMylettersComponent {
 
   onReload() {
 
-    this.sendService.getAll().subscribe({
+    this.sendService.findLetterUsingKupitiaKwa("HOD").subscribe({
       next: (res: any) => {
-        console.log(res)
+        console.log("Kupitia kwa",res)
         this.dataSource = res;
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
@@ -50,6 +53,8 @@ export class HodMylettersComponent {
       },
     });
   }
+
+  
 
   onCreate() {
     const options = {

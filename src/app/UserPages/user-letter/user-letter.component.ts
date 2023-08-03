@@ -13,6 +13,7 @@ import { User } from 'src/app/models/user';
 import { ApprovedComponent } from '../approved/approved.component';
 
 import { RejectedComponent } from '../rejected/rejected.component';
+import { ViewDocumentComponent } from 'src/app/view-document/view-document.component';
 
 
 @Component({
@@ -34,7 +35,7 @@ throw new Error('Method not implemented.');
   @ViewChild(MatTable) table!: MatTable<any>;
 
   dataSource!: MatTableDataSource<any>;
-  displayedColumns = ['id','letterFrom','letterTo','letterDoc','actions',];
+  displayedColumns = ['id','letterFrom','letterTo','letterDoc','kk','actions',];
   notLoggedIn: any;
   constructor(
     private sendService:SendletterService,
@@ -45,7 +46,7 @@ throw new Error('Method not implemented.');
     this.onReload();
     this.dataSource = new MatTableDataSource();
   }
-  name = 'rrrr'
+  
   onReload() {
 
     this.sendService.getAll().subscribe({
@@ -60,6 +61,16 @@ throw new Error('Method not implemented.');
       },
     });
   }
+
+  view(element:any){
+    const options = {
+      data: element,
+      width: '60%',
+      disableClose: true,
+    };
+    this.dialog.open(ViewDocumentComponent, options);
+  }
+
 
 
 

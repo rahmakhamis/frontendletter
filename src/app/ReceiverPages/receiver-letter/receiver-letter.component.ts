@@ -27,7 +27,7 @@ export class ReceiverLetterComponent {
   @ViewChild(MatTable) table!: MatTable<any>;
 
   dataSource!: MatTableDataSource<any>;
-  displayedColumns = ['id','letterFrom','letterTo','letterDoc','status'];
+  displayedColumns = ['id','letterFrom','letterTo','letterDoc','kk','status'];
   notLoggedIn: any;
   constructor(
     private sendService:SendletterService,
@@ -38,7 +38,7 @@ export class ReceiverLetterComponent {
     this.onReload();
     this.dataSource = new MatTableDataSource();
   }
-  name = 'rrrr'
+
   onReload() {
 
     this.sendService.getAll().subscribe({

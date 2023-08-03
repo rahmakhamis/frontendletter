@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { ViewDocumentComponent } from 'src/app/view-document/view-document.component';
 
 @Component({
   selector: 'app-dvc-myletters',
@@ -29,7 +30,7 @@ export class DvcMylettersComponent {
       @ViewChild(MatTable) table!: MatTable<any>;
 
       dataSource!: MatTableDataSource<any>;
-      displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','kk','actions',];
+      displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','actions',];
       notLoggedIn: any;
       constructor(
         private sendService:SendletterService,
@@ -40,12 +41,12 @@ export class DvcMylettersComponent {
         this.onReload();
         this.dataSource = new MatTableDataSource();
       }
-      name = 'rrrr'
+
       onReload() {
 
-        this.sendService.getAll().subscribe({
+        this.sendService.findLetterUsingKupitiaKwa("DVC").subscribe({
           next: (res: any) => {
-            console.log(res)
+            console.log("Kupitia kwa",res)
             this.dataSource = res;
             this.dataSource = new MatTableDataSource(res);
             this.dataSource.paginator = this.paginator;
@@ -71,6 +72,14 @@ export class DvcMylettersComponent {
           disableClose: true,
         };
         this.dialog.open(ApprovedComponent, options);
+      }
+      view(element:any){
+        const options = {
+          data: element,
+          width: '60%',
+          disableClose: true,
+        };
+        this.dialog.open(ViewDocumentComponent, options);
       }
 
       onRejected(item: User) {

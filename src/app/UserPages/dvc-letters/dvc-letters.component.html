@@ -1,5 +1,5 @@
 
-<div class="h5 text-center text-muted my-0"><i class="fa fa-pen  mb-3"></i>RECEIVER</div>
+<div class="h5 text-center text-muted my-0"><i class="fa fa-user  mb-3"></i>RECEIVER (DVC)</div>
 
 <div class=" container card shadow p-4 border  " style="width: 95%;">
 <div class="container">
@@ -9,37 +9,32 @@
   <div class="mat-elevation-z3 p-2 border table-responsive">
     <table mat-table [dataSource]="dataSource" class="table table-borderless table-hover table-sm " >
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef class="text-center"> <b>S/N.</b></th>
+        <th mat-header-cell *matHeaderCellDef class=""> <b>S/N.</b></th>
         <td mat-cell *matCellDef="let element; let i=index"> {{i+1}} </td>
       </ng-container>
 
       <ng-container matColumnDef="letterFrom">
-          <th mat-header-cell *matHeaderCellDef class="text-center"> <b>LETTER FROM</b> </th>
-          <td mat-cell *matCellDef="let element"> {{element.letterfrom}} </td>
+          <th mat-header-cell *matHeaderCellDef class=""> <b>LETTER FROM</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.letterFrom.name}} </td>
         </ng-container>
 
         <ng-container matColumnDef="letterTo">
-          <th mat-header-cell *matHeaderCellDef class="text-center"> <b>LETTER TO</b> </th>
+          <th mat-header-cell *matHeaderCellDef class=""> <b>LETTER TO</b> </th>
           <td mat-cell *matCellDef="let element"> {{element.letterTo}} </td>
         </ng-container>
 
 
         <ng-container matColumnDef="letterDoc">
-          <th mat-header-cell *matHeaderCellDef class="text-center"><b>LETTE DOC:</b></th>
-          <td mat-cell *matCellDef="let element"> {{element.letteDoc}} </td>
+          <th mat-header-cell *matHeaderCellDef class=""><b>letterDoc</b></th>
+          <td mat-cell *matCellDef="let element"> <button (click)="view(element)"> Letter</button></td>
         </ng-container>
 
         <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef class="text-center"><b>STATUS</b></th>
+          <th mat-header-cell *matHeaderCellDef class=""><b>STATUS</b></th>
           <td mat-cell *matCellDef="let element"> {{element.status}} </td>
         </ng-container>
 
 
-
-        <ng-container matColumnDef="kk">
-          <th mat-header-cell *matHeaderCellDef class="text-center"><b>KK</b></th>
-          <td mat-cell *matCellDef="let element"> {{element.KK}} </td>
-        </ng-container>
 
 
 

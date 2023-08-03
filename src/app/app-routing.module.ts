@@ -48,6 +48,7 @@ import { DVCLETTERSComponent } from './UserPages/dvc-letters/dvc-letters.compone
 import { VcHomeComponent } from './UserPages/vc-home/vc-home.component';
 import { VcMylettersComponent } from './UserPages/vc-myletters/vc-myletters.component';
 import { HodLettersComponent } from './UserPages/hod-letters/hod-letters.component';
+import { UserSettingComponent } from './ReceiverPages/user-setting/user-setting.component';
 
 const routes: Routes = [
   {
@@ -113,10 +114,7 @@ const routes: Routes = [
         path: 'senderLetter',
         component: UserLetterComponent,
       },
-      // {
-      //   path: 'user-setting',
-      //   component: UserSettingComponent,
-      // },
+
       // hod
       {
         path: 'hod-home',
@@ -172,7 +170,7 @@ const routes: Routes = [
 
 
 
-      
+
 
 
 
@@ -206,6 +204,11 @@ const routes: Routes = [
       {
         path: 'aproved-letter',
         component: AprovedLettersComponent
+      },
+
+       {
+        path: 'user-setting',
+        component: UserSettingComponent,
       },
 
 

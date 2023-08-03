@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { ViewDocumentComponent } from 'src/app/view-document/view-document.component';
 
 @Component({
   selector: 'app-vc-myletters',
@@ -40,12 +41,12 @@ export class VcMylettersComponent {
         this.onReload();
         this.dataSource = new MatTableDataSource();
       }
-      name = 'rrrr'
+
       onReload() {
 
-        this.sendService.getAll().subscribe({
+        this.sendService.findLetterUsingKupitiaKwa("VC").subscribe({
           next: (res: any) => {
-            console.log(res)
+            console.log("Kupitia kwa",res)
             this.dataSource = res;
             this.dataSource = new MatTableDataSource(res);
             this.dataSource.paginator = this.paginator;
@@ -55,7 +56,6 @@ export class VcMylettersComponent {
           },
         });
       }
-
       onCreate() {
         const options = {
           width: '60%',
@@ -71,6 +71,15 @@ export class VcMylettersComponent {
           disableClose: true,
         };
         this.dialog.open(ApprovedComponent, options);
+      }
+
+      view(element:any){
+        const options = {
+          data: element,
+          width: '60%',
+          disableClose: true,
+        };
+        this.dialog.open(ViewDocumentComponent, options);
       }
 
       onRejected(item: User) {

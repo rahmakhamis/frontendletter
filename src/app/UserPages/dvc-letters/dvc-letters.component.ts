@@ -9,6 +9,7 @@ import { SendletterService } from 'src/app/Services/sendletter.service';
 import { ApprovedComponent } from '../approved/approved.component';
 import { User } from 'src/app/models/user';
 import { RejectedComponent } from '../rejected/rejected.component';
+import { ViewDocumentComponent } from 'src/app/view-document/view-document.component';
 
 @Component({
   selector: 'app-dvc-letters',
@@ -29,7 +30,7 @@ export class DVCLETTERSComponent {
       @ViewChild(MatTable) table!: MatTable<any>;
 
       dataSource!: MatTableDataSource<any>;
-      displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','kk','actions',];
+      displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','actions',];
       notLoggedIn: any;
       constructor(
         private sendService:SendletterService,
@@ -37,15 +38,30 @@ export class DVCLETTERSComponent {
         private dialog:MatDialog
       ) {}
       ngOnInit(): void {
-        this.onReload();
+        this.onReloads();
         this.dataSource = new MatTableDataSource();
       }
-      name = 'rrrr'
+
       onReload() {
 
         this.sendService.getAll().subscribe({
           next: (res: any) => {
             console.log(res)
+            this.dataSource = res;
+            this.dataSource = new MatTableDataSource(res);
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
+          },
+          error: () => {
+          },
+        });
+      }
+
+      onReloads() {
+
+        this.sendService.findLetterUsingLetterTo("DVC").subscribe({
+          next: (res: any) => {
+            console.log("dvc",res)
             this.dataSource = res;
             this.dataSource = new MatTableDataSource(res);
             this.dataSource.paginator = this.paginator;
@@ -63,6 +79,16 @@ export class DVCLETTERSComponent {
         };
         this.dialog.open(AddletterComponent, options);
       }
+
+
+       view(element:any){
+    const options = {
+      data: element,
+      width: '60%',
+      disableClose: true,
+    };
+    this.dialog.open(ViewDocumentComponent, options);
+  }
 
       onEdit(item: User) {
         const options = {

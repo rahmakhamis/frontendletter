@@ -1,24 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DVCLETTERSComponent } from './dvc-letters.component';
+import { UserSettingComponent } from './user-setting.component';
 
-describe('DVCLETTERSComponent', () => {
-  let component: DVCLETTERSComponent;
-  let fixture: ComponentFixture<DVCLETTERSComponent>;
+describe('UserSettingComponent', () => {
+  let component: UserSettingComponent;
+  let fixture: ComponentFixture<UserSettingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DVCLETTERSComponent ]
+      declarations: [ UserSettingComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DVCLETTERSComponent);
+    fixture = TestBed.createComponent(UserSettingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
-
-  
 
   it('should create', () => {
     expect(component).toBeTruthy();

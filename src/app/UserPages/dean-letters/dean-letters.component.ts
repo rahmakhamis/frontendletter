@@ -9,6 +9,7 @@ import { SendletterService } from 'src/app/Services/sendletter.service';
 import { Router } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { ViewDocumentComponent } from 'src/app/view-document/view-document.component';
 
 @Component({
   selector: 'app-dean-letters',
@@ -24,7 +25,7 @@ export class DeanLettersComponent {
   @ViewChild(MatTable) table!: MatTable<any>;
 
   dataSource!: MatTableDataSource<any>;
-  displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','kk','actions',];
+  displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','actions',];
   notLoggedIn: any;
   constructor(
     private sendService:SendletterService,
@@ -32,15 +33,15 @@ export class DeanLettersComponent {
     private dialog:MatDialog
   ) {}
   ngOnInit(): void {
-    this.onReload();
+    this.onReloads();
     this.dataSource = new MatTableDataSource();
   }
-  name = 'rrrr'
-  onReload() {
 
-    this.sendService.getAll().subscribe({
+  onReloads() {
+
+    this.sendService.findLetterUsingLetterTo("DEAN").subscribe({
       next: (res: any) => {
-        console.log(res)
+        console.log("dean",res)
         this.dataSource = res;
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
@@ -58,6 +59,16 @@ export class DeanLettersComponent {
     };
     this.dialog.open(AddletterComponent, options);
   }
+
+  view(element:any){
+    const options = {
+      data: element,
+      width: '60%',
+      disableClose: true,
+    };
+    this.dialog.open(ViewDocumentComponent, options);
+  }
+
 
   onEdit(item: User) {
     const options = {

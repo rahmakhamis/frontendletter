@@ -9,6 +9,7 @@ import { SendletterService } from 'src/app/Services/sendletter.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { ViewDocumentComponent } from 'src/app/view-document/view-document.component';
 
 @Component({
   selector: 'app-hod-letters',
@@ -24,7 +25,7 @@ export class HodLettersComponent {
   @ViewChild(MatTable) table!: MatTable<any>;
 
   dataSource!: MatTableDataSource<any>;
-  displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','kk','actions',];
+  displayedColumns = ['id','letterFrom','letterTo','letterDoc','status','actions',];
   notLoggedIn: any;
   constructor(
     private sendService:SendletterService,
@@ -52,12 +53,37 @@ export class HodLettersComponent {
     });
   }
 
+
+  onReloads() {
+
+    this.sendService.findLetterUsingLetterTo("HOD").subscribe({
+      next: (res: any) => {
+        console.log(res)
+        this.dataSource = res;
+        this.dataSource = new MatTableDataSource(res);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      },
+      error: () => {
+      },
+    });
+  }
+
   onCreate() {
     const options = {
       width: '60%',
       disableClose: true,
     };
     this.dialog.open(AddletterComponent, options);
+  }
+
+  view(element:any){
+    const options = {
+      data: element,
+      width: '60%',
+      disableClose: true,
+    };
+    this.dialog.open(ViewDocumentComponent, options);
   }
 
   onEdit(item: User) {

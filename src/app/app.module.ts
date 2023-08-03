@@ -76,6 +76,7 @@ import { ApprovedComponent } from './UserPages/approved/approved.component';
 import { RejectedComponent } from './UserPages/rejected/rejected.component';
 import {MatSelectModule} from '@angular/material/select';
 import { ViewDocumentComponent } from './view-document/view-document.component';
+import { UserSettingComponent } from './ReceiverPages/user-setting/user-setting.component';
 
 
 
@@ -136,6 +137,7 @@ import { ViewDocumentComponent } from './view-document/view-document.component';
      ApprovedComponent,
      RejectedComponent,
      ViewDocumentComponent,
+     UserSettingComponent,
 
 
   ],
